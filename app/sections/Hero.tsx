@@ -22,7 +22,7 @@ export default function Hero(){
       </button>
 
       </section>
-      <section className="flex flex-col justify-between items-center w-full absolute bottom-0">
+      <section className="flex flex-col justify-between items-center w-full absolute bottom-0 bg-gradient-to-b from-[rgba(0,0,0,.1)] to-[rgba(0,0,0,1)]">
           {rows.current.map((val:number,index:number)=>{
             return (<Test rowNumber={val} key={index}/>)
           })}

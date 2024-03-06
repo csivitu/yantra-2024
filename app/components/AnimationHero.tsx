@@ -27,7 +27,7 @@ const MyComponent:React.FunctionComponent<animationProps> = ({rowNumber}) => {
     const interval:NodeJS.Timeout = setInterval(() => {
       const newString = generateString(90); 
       setGeneratedString(newString);
-    }, 150);
+    }, 100);
 
     return () => {
       clearInterval(interval);
