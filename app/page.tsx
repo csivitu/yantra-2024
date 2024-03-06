@@ -1,8 +1,8 @@
-import Navbar from "./components/Navbar";
+import Hero from "./sections/Hero";
 export default function Home() {
   return (
-  <main className="h-screen w-full bg-hero-background bg-no-repeat bg-cover bg-black flex flex-col py-[1rem] px-[1rem]">
-      <Navbar/>
+  <main className="w-full gap-[1rem] flex flex-col font-schabo bg-black">
+     <Hero/> 
   </main>
   );
 }

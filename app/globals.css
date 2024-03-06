@@ -5,10 +5,14 @@
 @layer base{
     @font-face { 
         font-family: aeonikFont; 
-        src: url('/fonts/AeonikTRIAL-Regular.otf') 
+        src: url('/fonts/AeonikTRIAL-Regular.otf') format("opentype")
     } 
     @font-face { 
         font-family: concreteMono; 
-        src: url('/fonts/concreteMono.ttf') 
+        src: url('/fonts/concreteMono.ttf') format("truetype")
+    } 
+    @font-face { 
+        font-family: schabo; 
+        src: url('/fonts/SCHABO-Condensed.otf') format("opentype")
     } 
 }
