@@ -16,18 +16,29 @@ export async function POST(request:Request){
         })
         const userName = session?.user?.name;
         console.log({team})
-        if(teamCode === team?.teamCode && userName !== team?.userName){
-            const userUpdate = await prisma.user.update({
-                where: {name: session?.user?.name},
-                data: {
-                    teamName:teamName,
-                }
-            }) 
+        const teamMembers = await prisma.user.findMany({
+            where:{
+                teamName: teamName,
+            }
+        })
+        if(teamMembers.length < 4){
+
+            if(teamCode === team?.teamCode && userName !== team?.userName){
+                const userUpdate = await prisma.user.update({
+                    where: {name: session?.user?.name},
+                    data: {
+                        teamName:teamName,
+                    }
+                }) 
+            }
+            else{
+                console.log("invalid team code or already part of the team")
+            }
+            console.log('successful')
         }
         else{
-            console.log("invalid team code or already part of the team")
+            console.log('team full')
         }
-       console.log('successful')
     } catch(err){
         console.log(err);
     }

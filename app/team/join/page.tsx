@@ -19,7 +19,7 @@ export default function Form() {
         }),
         });
     console.log({ response });
-    router.push('/')
+    router.push('/dashboard')
     router.refresh()
     };
 return (

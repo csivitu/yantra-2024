@@ -19,7 +19,7 @@ export default function Form() {
         }),
         });
     console.log({ response });
-    router.push('/')
+    router.push('/dashboard')
     router.refresh()
     };
 return (
@@ -27,11 +27,13 @@ return (
         onSubmit={handleSubmit}
         className="flex flex-col gap-2 mx-auto max-w-md mt-10"
         >
+        <label htmlFor="teamName">Team Name</label>
         <input
         name="teamName"
         className="border border-black text-black"
         type="text"
         />
+        <label>Team Description</label>
         <input
         name="description"
         className="border border-black  text-black"

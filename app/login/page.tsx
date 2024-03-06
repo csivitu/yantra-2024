@@ -8,9 +8,9 @@ import Link from "next/link";
 
 export default function LoginPage() {
      const session = getServerSession(authOptions);
-     if (session) {
-         console.log(session)
-     }
+//     if (session) {
+//         console.log(session)
+//     }
 
     const callbackUrl = "/team"; // Define a callback URL or use a default one.
 
