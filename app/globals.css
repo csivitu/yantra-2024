@@ -15,4 +15,8 @@
         font-family: schabo; 
         src: url('/fonts/SCHABO-Condensed.otf') format("opentype")
     } 
+    @font-face { 
+        font-family: ptmono; 
+        src: url('/fonts/PTMono-Regular.ttf') format("truetype")
+    } 
 }

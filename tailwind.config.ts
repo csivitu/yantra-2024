@@ -17,7 +17,8 @@ const config: Config = {
       fontFamily:{
         aeonik:["aeonikFont","sans-serif"],
         concreteMono:['concreteMono',"sans-serif"],
-        schabo:["schabo"]
+        schabo:["schabo"],
+        ptMono:["ptmono"]
       }
     },
   },
