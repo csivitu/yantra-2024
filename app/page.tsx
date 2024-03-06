@@ -1,10 +1,10 @@
-import Image from "next/image";
-
+import Navbar from "./components/Navbar";
 export default function Home() {
   return (
-  <div>
-  <h1>Home</h1>
-  </div>
+  <main className="h-screen w-full bg-hero-background bg-no-repeat bg-cover bg-black flex flex-col py-[1rem] px-[1rem]">
+      <Navbar/>
+  </main>
   );
 }
+
 

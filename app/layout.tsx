@@ -22,10 +22,10 @@ children: React.ReactNode;
     return (
             <html lang="en">
             <body className={inter.className}>
-            <nav>
+            {/* <nav>
             {!!session && <Logout /> }
             {!!session && <Link href="/profile">Profile</Link> }
-            {!session && <Link href="/login">Login</Link>}</nav>
+            {!session && <Link href="/login">Login</Link>}</nav> */}
             {children}</body>
             </html>
            );
