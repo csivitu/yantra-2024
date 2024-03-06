@@ -12,7 +12,9 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-          'hero-background':'url("/hero/hero.svg")'
+          'hero-background':'url("/hero/hero.svg")',
+          'imgYantra':`url('/yantra/img.svg')`,
+          
       },
       fontFamily:{
         aeonik:["aeonikFont","sans-serif"],

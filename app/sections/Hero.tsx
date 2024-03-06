@@ -8,10 +8,10 @@ export default function Hero(){
     return (
        <main className="flex h-screen w-full flex-col justify-between items-center bg-hero-background bg-no-repeat bg-cover bg-black px-[1rem] py-[0.5rem] gap-[1rem] overflow-x-hidden relative">
       <Navbar/>
-      <section className="flex  flex-col z-[2] w-fit justify-center items-center absolute top-[50%] translate-y-[-50%] gap-[1rem]">
+      <section className="flex  flex-col z-[2] w-fit justify-center items-center absolute top-[50%] translate-y-[-50%] ">
       <Image src='/hero/yantra.svg' alt="Logo" width={150} height={150}/>
 
-      <div className="text-white text-[108px] font-medium text-center leading-[7rem] relative">
+      <div className="text-white text-[108px] font-medium text-center leading-[7rem] relative py-[2rem] px-[1rem]">
       <Image src='/hero/plus.svg' alt="Logo" width={30} height={30} className="absolute left-0 top-0"/>
 
         A week of Technical <br /> Innovation
