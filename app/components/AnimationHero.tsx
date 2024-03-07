@@ -42,13 +42,13 @@ const MyComponent:React.FunctionComponent<animationProps> = ({rowNumber}) => {
             if(checkExistence(index)>0){
                 if(Math.random()>0.85){
                    return (
-                    <span className='text-[#0281F0]'>
+                    <span className='text-[#0281F0]' key={index}>
                         {s}
                     </span>
                    )
                 }
                 return (
-                    <span>
+                    <span key={index}>
                                 {` `}
                     </span>
                 )
@@ -56,7 +56,7 @@ const MyComponent:React.FunctionComponent<animationProps> = ({rowNumber}) => {
         }
         
         return (
-            <span className='opacity-[70%] text-[#0281F0]'>
+            <span className='opacity-[70%] text-[#0281F0]' key={index}>
                 {s}
             </span>
         )
