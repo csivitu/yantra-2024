@@ -12,7 +12,7 @@ export default function Yantra(){
 </div>
             </section>
             <section className="flex flex-col w-[52%] gap-[12px]">
-                <div className=" text-white text-[370px] text-transparent bg-clip-text border-[1px] border-[#292929] rounded-[20px] flex justify-center items-center overflow-x-clip bg-gradient-radial from-[#B6C2FF] to-[#00051D] font-schabo  leading-tight whitespace-nowrap ">
+                <div className=" text-[370px] text-transparent bg-clip-text border-[1px] border-[#292929] rounded-[20px] flex justify-center items-center overflow-x-clip bg-gradient-radial from-[#B6C2FF] to-[#00051D] font-schabo  leading-tight whitespace-nowrap ">
                 ANNUAL TECH
                 </div>
                 <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-[20px] px-[28px] py-[28px] leading-9 ">
