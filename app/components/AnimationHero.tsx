@@ -13,7 +13,7 @@ function checkExistence(colNumber:number){
     if(colNumber>displacement(75,colNumber) && colNumber<displacement(90,colNumber)) return 1
     return  Math.sin(colNumber*Math.random()*180/Math.PI);
 }
-function generateString(numChars: number): string {
+function generateString(numChars: number): string { 
     let result = '';
     for (let i = 0; i < numChars; i++) {
       const randomIndex = Math.floor(Math.random() * characters.length);
