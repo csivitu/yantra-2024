@@ -21,6 +21,11 @@ const config: Config = {
         concreteMono:['concreteMono',"sans-serif"],
         schabo:["schabo"],
         ptMono:["ptmono"]
+      },
+      screens:{
+        mobile:'320px',
+        tab:'728px',
+        laptop:'1024px'
       }
     },
   },
