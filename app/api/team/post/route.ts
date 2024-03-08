@@ -13,21 +13,24 @@ export async function POST(request:Request){
     try{
         const {teamName, description} = await request.json();
         const session = await getServerSession(authOptions);
-        const result = await prisma.team.create({
-            data:{
-                teamName: teamName,
-                description: description,
-                teamCode: generateInviteCode(),
-                createdBy: { connect : { name: session?.user?.name}},
-            },
+        if (session?.user?.name) {
 
-        })
-        const userUpdate = await prisma.user.update({
-            where: {name: session?.user?.name},
-            data: {
-                teamName:teamName,
-            }
-        }) 
+            const result = await prisma.team.create({
+                data: {
+                    teamName: teamName,
+                    description: description,
+                    teamCode: generateInviteCode(),
+                    createdBy: { connect: { name: session?.user?.name } },
+                },
+
+            })
+            const userUpdate = await prisma.user.update({
+                where: { name: session?.user?.name },
+                data: {
+                    teamName: teamName,
+                }
+            })
+        }
         console.log('successful')
         console.log('successful')
     } catch(err){

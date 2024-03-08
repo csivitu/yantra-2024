@@ -10,11 +10,29 @@ export default async function Dashboard(){
     if(session){
         console.log(session)
     }
+    if(!session?.user?.name){
+        return (
+            <div>
+                <h1>Dashboard</h1>
+                <p>You are not in a team</p>
+                <Page/> 
+            </div>
+        )
+    }
     const User  = await prisma.user.findUnique({
         where:{
             name:session?.user?.name,
         },
         })
+    if(!User){
+        return (
+            <div>
+                <h1>Dashboard</h1>
+                <p>You are not in a team</p>
+                <Page/> 
+            </div>
+        )
+    }
     console.log({User})
     if(User.teamName === null){
         return (
@@ -40,6 +58,15 @@ export default async function Dashboard(){
         }
         })
     console.log({members})
+    if(!team){
+        return (
+            <div>
+                <h1>Dashboard</h1>
+                <p>You are not in a team</p>
+                <Page/> 
+            </div>
+        )
+    }
 
     return (
             <div>

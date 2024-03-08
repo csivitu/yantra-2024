@@ -23,7 +23,7 @@ export async function POST(request:Request){
         })
         if(teamMembers.length < 4){
 
-            if(teamCode === team?.teamCode && userName !== team?.userName){
+            if(teamCode === team?.teamCode && userName !== team?.userName && session?.user?.name){
                 const userUpdate = await prisma.user.update({
                     where: {name: session?.user?.name},
                     data: {
