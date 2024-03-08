@@ -12,7 +12,7 @@ export default function Home() {
     <Yantra/>
     <VIT/>
     <Timeline/>
-    <Organisers/>
+    {/* <Organisers/> */}
     <Patrons/>
     <Footer/>
   </main>

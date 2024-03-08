@@ -4,7 +4,7 @@ export default function Footer(){
         <footer className="w-full flex px-[3rem] gap-[1rem] justify-between h-[524px] overflow-y-hidden ">
             <section className="flex flex-col  justify-between">
                 <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-full px-[28px] py-[28px] text-center ">
-                Menu
+                MENU
                 </div>
                 <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-2xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center  ">
                 <div>
@@ -21,15 +21,15 @@ export default function Footer(){
                 </div>
                 </div>
             </section>
-            <section className="flex flex-col w-[70%] justify-between h-[524px]">
-                <div className="w-full h-[50%] flex justify-center border-[1px] border-[#292929] rounded-[20px]">
-                <Image alt="Yantra Logo" src={'/hero/mainLogo.svg'} width={1000} height={1000} className="h-full w-auto"/>
+            <section className="flex flex-col w-[70%] justify-between gap-[1rem]">
+                <div className="w-full h-[50%] flex justify-center border-[1px] border-[#292929] rounded-[20px] relative">
+                <Image alt="Yantra Logo" src={'/hero/mainLogo.svg'} width={550} height={550} className="absolute top-[50%] translate-y-[-45%]"/>
                 </div>
                 <div className="flex justfiy-between gap-[1rem] items-end w-full">
-                <div className="w-[75%] h-[90%] text-[315px]  text-transparent bg-clip-text border-[1px] border-[#292929] rounded-[20px]  inline-block align-center overflow-x-clip bg-gradient-radial from-[#B6C2FF] to-[#00051D] font-schabo  leading-none whitespace-nowrap text-center">
+                {/* <div className="w-[75%] h-[90%] text-[315px]  text-transparent bg-clip-text border-[1px] border-[#292929] rounded-[20px]  inline-block align-center overflow-x-clip bg-gradient-radial from-[#B6C2FF] to-[#00051D] font-schabo  leading-none whitespace-nowrap text-center">
                 MADE WITH LOVE BY IXDA
-                </div>
-                <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col gap-[2rem] text-white text-2xl border-[1px] border-[#292929] rounded-[2rem] w-[25%] py-[28px] text-center ">
+                </div> */}
+                <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col gap-[2rem] text-white text-2xl border-[1px] border-[#292929] rounded-[2rem] w-full py-[28px] text-center ">
                 <div className="text-[#fff] text-3xl">
                     Contact Us
                 </div>
@@ -47,7 +47,7 @@ export default function Footer(){
             </section>
             <section className="flex flex-col  justify-between">
                 <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-full px-[28px] py-[28px] text-center ">
-                Links
+                LINKS
                 </div>
                 <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-2xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center ">
                 <div className="flex w-full flex-row justify-around items-center gap-[1rem]">

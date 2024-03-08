@@ -12,10 +12,10 @@ export default function Timeline(){
             </div>
             <section className="grid grid-cols-6 gap-[1rem] w-full">
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[96px] border-[1px] border-[##292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none invisible">
+            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none invisible">
                 TIME
             </div>
-                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]">
+                <div className="flex flex-col gap-[40px] border-[#292929]  border-[1px] rounded-[20px] py-[1rem]">
                     {timeArray.map((time:number,idx:number)=>{
                     return (
                         <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{time} AM</div>
@@ -24,61 +24,65 @@ export default function Timeline(){
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[96px] border-[1px] border-[##292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
             19 <sup>th</sup>
             </div>
-                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]">
-                    {timeArray.map((time:number,idx:number)=>{
+                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem] h-full">
+                    {/* {timeArray.map((time:number,idx:number)=>{
                     return (
-                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{time} AM</div>
+                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{'  '}</div>
                     )
-                })}
+                })} */}
+               <div className="text-[#fff]  text-center font-ptMono text-2xl">Opening ceremony</div>
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[96px] border-[1px] border-[##292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
             20 <sup>th</sup>
             </div>
-                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]">
+                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]  h-full">
                     {timeArray.map((time:number,idx:number)=>{
                     return (
-                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{time} AM</div>
+                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{'  '}</div>
                     )
                 })}
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[96px] border-[1px] border-[##292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
                 21 <sup>st</sup>
             </div>
-                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]">
-                    {timeArray.map((time:number,idx:number)=>{
+                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]  h-full">
+                    {/* {timeArray.map((time:number,idx:number)=>{
                     return (
-                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{time} AM</div>
+                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl ">{'  '}</div>
                     )
-                })}
+                })} */}
+                 <div className="text-[#fff]  text-center font-ptMono text-2xl">Event1</div>
+                 <div className="text-[#fff]  text-center font-ptMono text-2xl">{'  '}</div>
+                 <div className="text-[#fff]  text-center font-ptMono text-2xl">Opening ceremony ending</div>
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[96px] border-[1px] border-[##292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
                 22 <sup>nd</sup>
             </div>
-                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]">
+                <div className="flex flex-col gap-[40px] border-[#292929]  border-[1px] rounded-[20px] py-[1rem]  h-full">
                     {timeArray.map((time:number,idx:number)=>{
                     return (
-                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{time} AM</div>
+                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{'  '}</div>
                     )
                 })}
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[96px] border-[1px] border-[##292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
                 23 <sup>rd</sup>
             </div>
-                <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]">
+                <div className="flex flex-col gap-[40px] border-[#292929]  border-[1px] rounded-[20px] py-[1rem]  h-full">
                     {timeArray.map((time:number,idx:number)=>{
                     return (
-                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{time} AM</div>
+                        <div key={idx} className="text-[#fff] text-opacity-60 text-center font-ptMono text-2xl">{'  '}</div>
                     )
                 })}
                 </div>
