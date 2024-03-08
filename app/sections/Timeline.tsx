@@ -1,8 +1,8 @@
 export default function Timeline(){
     const timeArray=[9,10,11,12,1,2,3,4,5,6,7,8,9]
     return (
-        <main className="w-full flex flex-col justify-between items-start px-[3rem] min-h-[80vh] gap-[2rem]">
-            <div className="w-full flex justify-between items-center">
+        <main className="w-full flex flex-col laptop:justify-between mobile:justify-start items-start px-[3rem] min-h-[80vh] gap-[2rem]">
+            <div className="w-full flex justify-between items-center mobile:flex-col laptop:flex-row">
             <h1 className=" font-ptMono text-[#eaeaea] text-6xl">
                 TIMELINE
             </h1>
@@ -10,9 +10,9 @@ export default function Timeline(){
                 MARCH*
             </h1>
             </div>
-            <section className="grid grid-cols-6 gap-[1rem] w-full">
-            <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none invisible">
+            <section className="grid laptop:grid-cols-6 mobile:grid-cols-1 gap-[1rem] w-full">
+            <div className="laptop:flex flex-col laptop:gap-[40px] mobile:hidden ">
+            <div className="font-schabo text-white laptop:text-[76px] mobile:text-[50px] border-[1px] border-[#292929] rounded-[74px] laptop:px-[28px] laptop:py-[28px] mobile:p-[1rem] text-center align-bottom leading-none invisible">
                 TIME
             </div>
                 <div className="flex flex-col gap-[40px] border-[#292929]  border-[1px] rounded-[20px] py-[1rem]">
@@ -24,7 +24,7 @@ export default function Timeline(){
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white laptop:text-[76px] mobile:text-[50px] border-[1px] border-[#292929] rounded-[74px] laptop:px-[28px] laptop:py-[28px] mobile:p-[1rem] text-center align-bottom leading-none">
             19 <sup>th</sup>
             </div>
                 <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem] h-full">
@@ -37,7 +37,7 @@ export default function Timeline(){
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white laptop:text-[76px] mobile:text-[50px] border-[1px] border-[#292929] rounded-[74px] laptop:px-[28px] laptop:py-[28px] mobile:p-[1rem] text-center align-bottom leading-none">
             20 <sup>th</sup>
             </div>
                 <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]  h-full">
@@ -49,7 +49,7 @@ export default function Timeline(){
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white laptop:text-[76px] mobile:text-[50px] border-[1px] border-[#292929] rounded-[74px] laptop:px-[28px] laptop:py-[28px] mobile:p-[1rem] text-center align-bottom leading-none">
                 21 <sup>st</sup>
             </div>
                 <div className="flex flex-col gap-[40px] border-[#292929]  border-[2px] rounded-[20px] py-[1rem]  h-full">
@@ -64,7 +64,7 @@ export default function Timeline(){
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white laptop:text-[76px] mobile:text-[50px] border-[1px] border-[#292929] rounded-[74px] laptop:px-[28px] laptop:py-[28px] mobile:p-[1rem] text-center align-bottom leading-none">
                 22 <sup>nd</sup>
             </div>
                 <div className="flex flex-col gap-[40px] border-[#292929]  border-[1px] rounded-[20px] py-[1rem]  h-full">
@@ -76,7 +76,7 @@ export default function Timeline(){
                 </div>
             </div>
             <div className="flex flex-col gap-[40px]">
-            <div className="font-schabo text-white text-[76px] border-[1px] border-[#292929] rounded-[74px] px-[28px] py-[28px] text-center align-bottom leading-none">
+            <div className="font-schabo text-white laptop:text-[76px] mobile:text-[50px] border-[1px] border-[#292929] rounded-[74px] laptop:px-[28px] laptop:py-[28px] mobile:p-[1rem] text-center align-bottom leading-none">
                 23 <sup>rd</sup>
             </div>
                 <div className="flex flex-col gap-[40px] border-[#292929]  border-[1px] rounded-[20px] py-[1rem]  h-full">

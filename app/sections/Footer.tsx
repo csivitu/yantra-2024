@@ -1,8 +1,8 @@
 import Image from "next/image"
 export default function Footer(){
     return (
-        <footer className="w-full flex px-[3rem] gap-[1rem] justify-between h-[524px] overflow-y-hidden ">
-            <section className="flex flex-col  justify-between">
+        <footer className="w-full flex mobile:px-[1rem] laptop:px-[3rem] gap-[1rem] justify-between laptop:h-[524px] overflow-y-hidden mobile:flex-col laptop:flex-row">
+            <section className="flex flex-col  justify-between mobile:gap-[1rem] laptop:gap-[0rem]">
                 <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-full px-[28px] py-[28px] text-center ">
                 MENU
                 </div>
@@ -21,15 +21,12 @@ export default function Footer(){
                 </div>
                 </div>
             </section>
-            <section className="flex flex-col w-[70%] justify-between gap-[1rem]">
-                <div className="w-full h-[50%] flex justify-center border-[1px] border-[#292929] rounded-[20px] relative">
-                <Image alt="Yantra Logo" src={'/hero/mainLogo.svg'} width={550} height={550} className="absolute top-[50%] translate-y-[-45%]"/>
+            <section className="flex flex-col laptop:w-[70%] justify-between gap-[1rem] mobile:w-full">
+                <div className="w-full h-[50%] flex justify-center border-[1px] border-[#292929] rounded-[20px] relative laptop:block mobile:hidden">
+                <Image alt="Yantra Logo" src={'/hero/mainLogo.svg'} width={550} height={550} className="absolute top-[50%] translate-y-[-45%] translate-x-[-50%] left-[50%]"/>
                 </div>
-                <div className="flex justfiy-between gap-[1rem] items-end w-full">
-                {/* <div className="w-[75%] h-[90%] text-[315px]  text-transparent bg-clip-text border-[1px] border-[#292929] rounded-[20px]  inline-block align-center overflow-x-clip bg-gradient-radial from-[#B6C2FF] to-[#00051D] font-schabo  leading-none whitespace-nowrap text-center">
-                MADE WITH LOVE BY IXDA
-                </div> */}
-                <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col gap-[2rem] text-white text-2xl border-[1px] border-[#292929] rounded-[2rem] w-full py-[28px] text-center ">
+                <div className="flex justfiy-between gap-[1rem] laptop:items-end mobile:w-full mobile:items-center">
+                <div className="laptop:px-[4rem] mobile:px-[1rem] font-ptMono text-opacity-60 flex flex-col gap-[2rem] text-white text-2xl border-[1px] border-[#292929] rounded-[2rem] w-full py-[28px] text-center mobile:w-full">
                 <div className="text-[#fff] text-3xl">
                     Contact Us
                 </div>
@@ -45,7 +42,7 @@ export default function Footer(){
                 </div>
                 </div>
             </section>
-            <section className="flex flex-col  justify-between">
+            <section className="flex flex-col  justify-between mobile:gap-[1rem] laptop:gap-[0rem]">
                 <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-full px-[28px] py-[28px] text-center ">
                 LINKS
                 </div>
