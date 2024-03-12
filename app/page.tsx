@@ -11,7 +11,7 @@ export default function Home() {
      <Hero/> 
     <Yantra/>
     <VIT/>
-    <Timeline/>
+    {/* <Timeline/> */}
     {/* <Organisers/> */}
     <Patrons/>
     <Footer/>
