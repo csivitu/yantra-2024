@@ -31,13 +31,10 @@ export default function Footer(){
                     Contact Us
                 </div>
                 <div className="font-aeonik">
-                @dsw.vit.ac.in
+                yantra.sw@vit.ac.in
                 </div>
                 <div className="font-aeonik">
                 9850278492
-                </div>
-                <div className="font-aeonik">
-                @dsw.vit.ac.in
                 </div>
                 </div>
                 </div>

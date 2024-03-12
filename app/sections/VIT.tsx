@@ -29,10 +29,10 @@ Global Outreach
 With campuses in multiple cities and international collaborations, VIT promotes a diverse and multicultural learning environment through student and faculty exchange programs.
 
 Industry Partnerships
-VIT maintains strong ties with leading industries, facilitating internships, placements, and industry-oriented projects, enhancing students' employability and entrepreneurial skills.
+VIT maintains strong ties with leading industries, facilitating internships, placements, and industry-oriented projects, enhancing students&apos; employability and entrepreneurial skills.
 
 Campus Life
-VIT's vibrant campus offers modern hostels, sports complexes, libraries, and recreational centers. Students are encouraged to participate in co-curricular and extracurricular activities for holistic development.
+VIT&apos;s vibrant campus offers modern hostels, sports complexes, libraries, and recreational centers. Students are encouraged to participate in co-curricular and extracurricular activities for holistic development.
 
 Committed to excellence, VIT shapes future professionals and responsible global citizens, equipping them with knowledge, skills, and values to drive positive change.                </div>
                 <div className="font-ptMono text-white text-5xl border-[1px] border-[#292929] rounded-[20px] px-[28px] py-[28px] text-center">
