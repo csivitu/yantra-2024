@@ -1,16 +1,15 @@
 'use client'
 
 import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth";
-import { signIn } from "next-auth/react"; // Import the signIn function from NextAuth for authentication.
+import { getSession, signIn } from "next-auth/react"; // Import the signIn function from NextAuth for authentication.
 import Link from "next/link";
 
 
 export default function LoginPage() {
-     const session = getServerSession(authOptions);
-//     if (session) {
-//         console.log(session)
-//     }
+     const session = getSession();
+    if (session) {
+        console.log(session)
+    }
 
     const callbackUrl = "/team"; // Define a callback URL or use a default one.
 
