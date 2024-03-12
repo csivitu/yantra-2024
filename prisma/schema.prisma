@@ -81,8 +81,8 @@ model Team {
   gLink       String? //github link
   fLink       String? //figma link
   dLink       String? //deployed link
-  userName    String   @unique @map("user_name")
-  createdBy   User     @relation(fields: [userName], references: [name], onDelete: Cascade)
+  userName    String?   @unique @map("user_name")
+  createdBy   User?     @relation(fields: [userName], references: [name])
 
   @@map("teams")
 }

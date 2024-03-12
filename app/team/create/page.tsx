@@ -18,7 +18,6 @@ export default function Form() {
             description: formData.get('description'),
         }),
         });
-    console.log({ response });
     router.push('/dashboard')
     router.refresh()
     };

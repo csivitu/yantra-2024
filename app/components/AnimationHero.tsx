@@ -38,7 +38,7 @@ const MyComponent:React.FunctionComponent<animationProps> = ({rowNumber}) => {
     {generatedString.split('').map((s:string,index:number)=>{
         // console.log(rowNumber*Math.random()/12)
         if(rowNumber<9){
-            console.log(checkExistence(index))
+            //console.log(checkExistence(index))
             if(checkExistence(index)>0){
                 if(Math.random()>0.85){
                    return (

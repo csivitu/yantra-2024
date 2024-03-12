@@ -1,6 +1,6 @@
 'use client';
 
-import { FormEvent, useState } from 'react';
+import { FormEvent} from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function Form() {
@@ -9,7 +9,7 @@ export default function Form() {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const response = await fetch(`/api/team/update`, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -21,7 +21,6 @@ export default function Form() {
                 }),
         });
 
-        console.log({ response });
         router.push('/dashboard');
         router.refresh();
     };

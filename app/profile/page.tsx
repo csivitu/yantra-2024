@@ -3,11 +3,6 @@ import { getServerSession } from "next-auth";
 
 export default async function ProfilePage() {
     const session = await getServerSession(authOptions);
-    if (session) {
-        console.log(session)
-    }
-
-
     return (
         <><div>
             {session?.user?.name}

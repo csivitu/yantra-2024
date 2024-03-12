@@ -1,5 +1,4 @@
-'use client';
-
+'use client'
 import { FormEvent } from 'react';
 import {useRouter} from 'next/navigation';
 
@@ -18,7 +17,6 @@ export default function Form() {
             description: formData.get('teamCode'),
         }),
         });
-    console.log({ response });
     router.push('/dashboard')
     router.refresh()
     };
