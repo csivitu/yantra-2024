@@ -16,8 +16,25 @@ export default function VIT(){
             <section className="flex flex-col laptop:w-[52%] mobile:gap-[12px] laptop:min-h-[80vh] mobile:px-[1rem]">
                
                 <div className="font-ptMono leading-9 text-white text-2xl border-[1px] border-[#292929] rounded-[20px] px-[28px] py-[28px]">
-                Riviera is the Annual International Sports and Cultural Carnival of the Vellore Institute of Technology. It is an International 4-day event that consists of sports competitions, social and cultural events along with concerts. The 2016 edition of Riviera witnessed a footfall of more than 30,000 students from over 650 colleges from across the country. It is organised primarily by the students of the college. It has a wide variety of competitions and events, which range from dramatic, literary, musical, dance, debate 
-                </div>
+                About VIT, Vellore
+Vellore Institute of Technology (VIT) is a prestigious institution of higher education in Vellore, Tamil Nadu, India. Established in 1984, VIT has emerged as a leading center for engineering, technology, and management education.
+
+Academic Excellence
+VIT offers a wide range of undergraduate, postgraduate, and doctoral programs across various disciplines. The institute boasts highly qualified faculty, state-of-the-art infrastructure, and cutting-edge facilities, providing a conducive learning environment.
+
+Research and Innovation
+VIT encourages students and faculty to engage in interdisciplinary research and innovation projects. The institute has established research centers and labs focusing on areas like renewable energy, nanotechnology, and artificial intelligence.
+
+Global Outreach
+With campuses in multiple cities and international collaborations, VIT promotes a diverse and multicultural learning environment through student and faculty exchange programs.
+
+Industry Partnerships
+VIT maintains strong ties with leading industries, facilitating internships, placements, and industry-oriented projects, enhancing students' employability and entrepreneurial skills.
+
+Campus Life
+VIT's vibrant campus offers modern hostels, sports complexes, libraries, and recreational centers. Students are encouraged to participate in co-curricular and extracurricular activities for holistic development.
+
+Committed to excellence, VIT shapes future professionals and responsible global citizens, equipping them with knowledge, skills, and values to drive positive change.                </div>
                 <div className="font-ptMono text-white text-5xl border-[1px] border-[#292929] rounded-[20px] px-[28px] py-[28px] text-center">
                {`       `}
                 </div>

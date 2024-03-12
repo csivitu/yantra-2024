@@ -19,8 +19,11 @@ export default function Yantra(){
                <p className="w-full laptop:mt-[90px] mobile:mt-[25px]"> ANNUAL</p>
                 </div>
                 <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-[20px] px-[28px] py-[28px] leading-9 ">
-                Riviera is the Annual International Sports and Cultural Carnival of the Vellore Institute of Technology. It is an International 4-day event that consists of sports competitions, social and cultural events along with concerts. The 2016 edition of Riviera witnessed a footfall of more than 30,000 students from over 650 colleges from across the country. It is organised primarily by the students of the college. It has a wide variety of competitions and events, which range from dramatic, literary, musical, dance, debate 
-                </div>
+                Yantra is an annual tech fest organized by Vellore Institute of Technology (VIT), celebrating innovation and technology. This week-long extravaganza features exciting competitions like hackathons, coding challenges, workshops, and technical talks.
+
+Promoting sustainable development goals, Yantra encourages students to develop innovative solutions that address real-world challenges through its flagship hackathon event. The fest fosters a vibrant community of tech enthusiasts, offering opportunities for collaboration, knowledge exchange, and showcasing technical skills.
+
+With a dynamic atmosphere and emphasis on creativity, problem-solving, and technological advancement, Yantra has become a highly anticipated event at VIT, inspiring students to push boundaries and drive positive change. </div>
                 <div className="font-ptMono text-white text-5xl border-[1px] border-[#292929] rounded-[20px] px-[28px] py-[28px] text-center">
                {`       `}
                 </div>

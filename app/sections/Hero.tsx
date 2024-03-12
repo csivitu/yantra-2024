@@ -11,7 +11,7 @@ export default function Hero(){
       <section className="flex flex-col z-[2] w-fit justify-center items-center absolute top-[50%] translate-y-[-55%] ">
       <Image src='/hero/mainLogo.svg' alt="Logo" width={300} height={300} className="mobile:w-[45%]"/>
 
-      <div className="text-white laptop:text-[108px] mobile:text-[46px] font-medium text-center laptop:leading-[7rem] relative py-[1rem] px-[1rem]">
+      <div className="text-white laptop:text-[98px] mobile:text-[46px] font-medium text-center laptop:leading-[7rem] relative py-[1rem] px-[1rem]">
       <Image src='/hero/plus.svg' alt="Logo" width={20} height={20} className="absolute left-0 top-0"/>
 
         A week of Technical <br /> Innovation
