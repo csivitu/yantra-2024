@@ -1,6 +1,6 @@
 {
-  "name": "gauthpls",
-  "version": "0.1.0",
+  "name": "yantra2024",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
