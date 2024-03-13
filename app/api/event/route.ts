@@ -1,48 +1,26 @@
-import {authOptions} from "@/lib/auth"
-import {NextResponse} from "next/server"
-import {getServerSession} from  "next-auth"
-import { warn } from "console"
+import { NextRequest, NextResponse } from "next/server"
+import prisma from "@/lib/prisma"
 
-type EventType = {
-    name:string
-    type:string
-    startDate: string
-    endDate:string
+export async function GET(req: NextRequest) {
+  try {
+    const page = parseInt(req.nextUrl.searchParams.get('page') || "0")
+    const limit = parseInt(req.nextUrl.searchParams.get('limit') || "20")
+    const eventName = req.nextUrl.searchParams.get('name') || null;
+    const eventType = req.nextUrl.searchParams.get('type') || null;
+
+    const events = await prisma.events.findMany({
+      skip: page * limit,
+      take: limit,
+      where: {
+        eventName: eventName ? { contains: eventName, mode: 'insensitive' } : undefined,
+        eventType: eventType ? { contains: eventType, mode: 'insensitive' } : undefined
+      }
+    });
+
+    return NextResponse.json({ events, message: "Events successfully fetched!" }, { status: 200 })
+  }
+  catch (e) {
+    return NextResponse.json({ message: "Internal server error" }, { status: 500 })
+  }
 }
-const generateEventData = (totalEvents: number): EventType[] => {
-  const eventData: EventType[] = [];
-
-  for (let i = 1; i <= totalEvents; i++) {
-    const event: EventType = {
-      name: `Event ${i}`,
-      type: i % 2 === 0 ? "Workshop" : "Hackathon",
-      startDate: "2022-05-01",
-      endDate: "2022-05-03",
-    };
-
-    eventData.push(event);
-  }
-
-  return eventData;
-}
-export async function GET(req: Request) {
-  try{
-    const session = await getServerSession(authOptions)
-     if(!session){
-      return NextResponse.json({message:"unauthenticated"}, {status: 200})
-    } 
-
-   //if(session){
-    //  return NextResponse.redirect("/dashboard")
-    //}
-    //return NextResponse.redirect("/login")
-    const evevnData = generateEventData(40)
-    return NextResponse.json(evevnData, {status: 200})
-
-
-  }
-  catch(e){
-      return NextResponse.json({message:"an error occurred"}, {status: 500})
-  }
-}  
 
