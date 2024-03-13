@@ -81,8 +81,22 @@ model Team {
   gLink       String? //github link
   fLink       String? //figma link
   dLink       String? //deployed link
-  userName    String?   @unique @map("user_name")
-  createdBy   User?     @relation(fields: [userName], references: [name])
+  userName    String?  @unique @map("user_name")
+  createdBy   User?    @relation(fields: [userName], references: [name])
 
   @@map("teams")
+}
+
+model Events {
+  id          String   @id @default(cuid())
+  eventName   String   @unique
+  eventType   String
+  description String
+  clubName    String
+  venue       String
+  eventStart  DateTime
+  eventEnd    DateTime
+  isOvernight Boolean
+
+  @@map("events")
 }
