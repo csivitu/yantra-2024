@@ -9,7 +9,7 @@ import {NextResponse} from 'next/server'
 
 export default async function Dashboard(){
     //const session = await getSession()--not working here
-    const session = await getServerSession(authOptions)
+    const session = await getServerSession(authOptions)  
     if(!session){
        return(
         <Link href="/login">
@@ -49,8 +49,7 @@ export default async function Dashboard(){
         </div>
         )
     }
-    const team = await getTeamInfo(user.teamName)
-    console.log(team)
+    const team= await getTeamInfo(user.teamName)
     if(!team){
         return(
             <div>

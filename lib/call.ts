@@ -19,17 +19,18 @@ export async function getTeamInfo(teamName:string){
             teamName:teamName
         }
     });
+    //console.log(team)
     return team;
 }
 export type Team = {
     id         : string   
     teamName   : string   
     teamCode   : string   
-    description: string
+    description: string | null
     createdAt  : Date 
     updatedAt  : Date 
-    gLink      : string 
-    fLink      : string
-    dLink      : string
-    userName   : string  
+    gLink      : string | null
+    fLink      : string | null
+    dLink      : string | null
+    userName   : string | null
 }
