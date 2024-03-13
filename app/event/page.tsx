@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-//temporary that is why not in lib directory for now
+//temporary that is why not in lib directory for now -- will switch to /api/ when ready
 type EventType = {
   name: string;
   type: string;

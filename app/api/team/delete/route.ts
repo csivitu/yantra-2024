@@ -18,14 +18,13 @@ export async function POST(request:Request){
         const user = await prisma.user.findFirst({
             where : {name:session.user.name},
         })
-        const teamName = user?.teamName
         await prisma.user.update({
             where : {name:session.user.name},
             data:{
                 teamName:null,
             }
         })
-        const team = await prisma.team.update({
+        await prisma.team.update({
             where : {userName:session.user.name},
             data:{
                 userName:null,
