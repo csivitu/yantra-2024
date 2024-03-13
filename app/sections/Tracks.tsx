@@ -6,7 +6,7 @@ type TrackProps = {
 
 const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
   return (
-    <main className="flex flex-col justify-center items-center gap-[1.5rem] px-[3rem] w-full ">
+    <div className="flex flex-col justify-center items-center gap-[1.5rem] px-[3rem] w-full ">
       <div className="text-center tab:text-left leading-none font-ptMono text-[#eaeaea] text-6xl border border-[#292929] w-full pb-4 pt-3 tab:pl-6 rounded-[20px]">
         TRACKS
       </div>
@@ -201,7 +201,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };
 
