@@ -1,73 +1,46 @@
 'use client'
+import { useState, useEffect } from "react";
+import axios from 'axios';
+import { EventsType } from "@/types/event";
 
-import { useState } from "react";
+const EventsPage = () => {
+  const [events, setEvents] = useState<EventsType[]>([]);
+  const [page, setPage] = useState<number>(0);
+  const [eventType, setEventType] = useState<string>("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
 
-//temporary that is why not in lib directory for now -- will switch to /api/ when ready
-type EventType = {
-  name: string;
-  type: string;
-  startDate: string;
-  endDate: string;
-};
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/event?page=${page}&limit=10&type=${eventType}&name=${searchTerm}`);
+        setEvents(response.data.events);
+      }
+      catch (e) {
+        console.error(e);
+      }
+    }
+    fetchData();
+  }, [page, eventType, searchTerm])
 
-const generateEventData = (totalEvents: number): EventType[] => {
-  const eventData: EventType[] = [];
-
-  for (let i = 1; i <= totalEvents; i++) {
-    const event: EventType = {
-      name: `Event ${i}`,
-      type: i % 2 === 0 ? "Workshop" : "Hackathon",
-      startDate: "2022-05-01",
-      endDate: "2022-05-03",
-    };
-
-    eventData.push(event);
+  const handlePreviousPage = () => {
+    setPage(prevPage => prevPage > 0 ? prevPage - 1 : prevPage);
   }
 
-  return eventData;
-};
-//temporary ends
-
-const EventsPage: React.FC = () => {
-  const totalEvents = 50; // Total number of events
-  const eventsPerPage = 10; // Number of events per page
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const [eventTypeFilter, setEventTypeFilter] = useState<string | null>(null);
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  
-  const allEventData = generateEventData(totalEvents);
-
-  // Apply filters
-  const filteredEvents = allEventData
-    .filter(event => !eventTypeFilter || event.type === eventTypeFilter)
-    .filter(event => event.name.toLowerCase().includes(searchTerm.toLowerCase()));
-
-  // Paginate filtered events
-  const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
-  const startIndex = (currentPage - 1) * eventsPerPage;
-  const endIndex = startIndex + eventsPerPage;
-  const currentEvents = filteredEvents.slice(startIndex, endIndex);
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
+  const handleNextPage = () => {
+    setPage(prevPage => prevPage + 1);
+  }
 
   return (
     <div>
       <h1>Event List</h1>
       <div>
-        <label>
-          Event Type:
-          <select
-            value={eventTypeFilter || ""}
-            onChange={(e) => setEventTypeFilter(e.target.value || null)}
-          >
-            <option value="">All</option>
-            <option value="Workshop">Workshop</option>
-            <option value="Hackathon">Hackathon</option>
-          </select>
-        </label>
+        <select name="eventType" onChange={(e) => setEventType(e.target.value)} className="w-full p-2">
+          <option value="">Select Event Type</option>
+          <option value="workshop">Workshop</option>
+          <option value="hackathon">Hackathon</option>
+          <option value="tech talk">Tech Talk</option>
+          <option value="tech competition">Tech Competition</option>
+        </select>
         <label>
           Search:
           <input
@@ -78,23 +51,24 @@ const EventsPage: React.FC = () => {
         </label>
       </div>
       <ul>
-        {currentEvents.map((event, index) => (
+        {events.map((event, index) => (
           <li key={index}>
-            <p>Name: {event.name}</p>
-            <p>Type: {event.type}</p>
-            <p>Start Date: {event.startDate}</p>
-            <p>End Date: {event.endDate}</p>
-            <hr />
+            <p>Name: {event.eventName}</p>
+            <p>Club: {event.clubName}</p>
+            <p>Description: {event.description}</p>
+            <p>Venue: {event.venue}</p>
+            <p>Start Date: {new Date(event.eventStart).toLocaleString()}</p>
+            <p>End Date: {new Date(event.eventEnd).toLocaleString()}</p>
           </li>
         ))}
       </ul>
 
       <div>
-        <span>Page {currentPage} of {totalPages}</span>
-        <button disabled={currentPage === 1} onClick={() => handlePageChange(currentPage - 1)}>
+        <span>Page {page + 1}</span>
+        <button onClick={handlePreviousPage}>
           Previous
         </button>
-        <button disabled={currentPage === totalPages} onClick={() => handlePageChange(currentPage + 1)}>
+        <button onClick={handleNextPage}>
           Next
         </button>
       </div>
