@@ -5,26 +5,39 @@ import Page from './redirect'
 import Link from 'next/link'
 import Form from './form'
 import {getTeamInfo, getUserInfo,Team} from '@/lib/call'
+import {NextResponse} from 'next/server'
 
 export default async function Dashboard(){
     //const session = await getSession()--not working here
     const session = await getServerSession(authOptions)
     if(!session){
-        console.log('no session')
-        return null
+       return(
+        <Link href="/login">
+        Go to Login
+        </Link>
+       )
     }
     if(!session.user){
-        console.log('no session')
-        return null;
+       return(
+        <Link href="/login">
+        Go to Login
+        </Link>
+       )
     }
     if(!session.user.name){
-        console.log('no session')
-        return null;
+       return(
+        <Link href="/login">
+        Go to Login
+        </Link>
+       )
     }
     const user = await getUserInfo(session.user.name)
     if(!user){
-        console.log('no session')
-        return null;
+       return(
+        <Link href="/login">
+        Go to Login
+        </Link>
+       )
     }
     if(!user.teamName){
         return(
