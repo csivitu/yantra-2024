@@ -1,5 +1,4 @@
 'use client';
-
 import { FormEvent } from 'react';
 import {useRouter} from 'next/navigation';
 
@@ -8,7 +7,7 @@ export default function Form() {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const response = await fetch(`/api/team/post`, {
+        await fetch(`/api/team/post`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

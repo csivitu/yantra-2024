@@ -6,8 +6,8 @@ export default function Form(){
     const router = useRouter()
     const handleSubmit = async (e:FormEvent<HTMLFormElement>) =>{
         e.preventDefault()
-        const formData = new FormData(e.currentTarget)
-        const response = await fetch(`/api/team/delete`,{
+        new FormData(e.currentTarget)
+        await fetch(`/api/team/delete`,{
             method:'POST',     
             headers:{
                 'Content-Type':'application/json',

@@ -1,48 +1,62 @@
-import { authOptions } from "@/lib/auth";
-import { getServerSession } from "next-auth";
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
-import LoginPage from "./redirect"
-import Link from "next/link"
+import {getSession} from 'next-auth/react'
+import {getServerSession} from 'next-auth'
+import {authOptions} from "@/lib/auth"
+import Page from './redirect'
+import Link from 'next/link'
 import Form from './form'
+import {getTeamInfo, getUserInfo,Team} from '@/lib/call'
 
 export default async function Dashboard(){
-    const session = await getServerSession(authOptions);
-    //    if(session){
-    //        console.log(session)
-    //    }
-    if(!session?.user?.name){//will never run though, the user will get redirected to login
-        return (
-                <LoginPage/> 
-               ) } 
-    const User  = await prisma.user.findUnique({
-where:{
-name:session?.user?.name,
-},
-})
-if(!User){//will never run though, the user will get redirected to login
-    return (
-            <LoginPage/> 
-           )
+    //const session = await getSession()--not working here
+    const session = await getServerSession(authOptions)
+    if(!session){
+        console.log('no session')
+        return null
+    }
+    if(!session.user){
+        console.log('no session')
+        return null;
+    }
+    if(!session.user.name){
+        console.log('no session')
+        return null;
+    }
+    const user = await getUserInfo(session.user.name)
+    if(!user){
+        console.log('no session')
+        return null;
+    }
+    if(!user.teamName){
+        return(
+        <div>
+            <h1>Dashboard</h1>
+            <p>Welcome {user.name}</p>
+            <p>Join a team to get started</p>
+            <Page />
+        </div>
+        )
+    }
+    const team = await getTeamInfo(user.teamName)
+    console.log(team)
+    if(!team){
+        return(
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome {user.name}</p>
+                <p>Join a team to get started</p>
+                <Page />
+            </div>
+            )
+    }
+
+    return renderTeamDashboard(user,team)//need to sort this
 }
-if(User.teamName === null){
+
+function renderTeamDashboard(user:{name:string},team:Team){
     return (
-            <LoginPage/> 
-           )
-} else{
-    const team = await prisma.team.findFirst({
-where:{
-teamName:User?.teamName,
-},
-})
-if(!team){//kyu bhai 
-    return (
-            <LoginPage/> 
-           )
-}
-return(
         <div>
         <h1>Dashboard</h1>
+        <p>Welcome {user.name}</p>
         <p>Team Name: {team?.teamName}</p>
         <p>Team Code: {team?.teamCode}</p>
         <p>Description: {team?.description}</p>
@@ -51,7 +65,6 @@ return(
         <p>Deploy Link: {team.dLink ? team.dLink : "Not set"}</p>
         <Form/>
         <Link href="/team/update">Update Team Info</Link>
-        </div>
-      )
-} 
+       </div>
+    )
 }

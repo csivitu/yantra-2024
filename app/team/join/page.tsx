@@ -7,16 +7,17 @@ export default function Form() {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const response = await fetch(`/api/team/join`, {
+        await fetch(`/api/team/join`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
             teamName: formData.get('teamName'),
-            description: formData.get('teamCode'),
+            teamCode: formData.get('teamCode'),
         }),
         });
+
     router.push('/dashboard')
     router.refresh()
     };
@@ -35,7 +36,7 @@ return (
         className="border border-black  text-black"
         type="text"
         />
-        <button type="submit">Create</button>
+        <button type="submit">Join Team</button>
         </form>
        );
 }
