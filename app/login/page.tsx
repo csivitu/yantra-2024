@@ -1,13 +1,24 @@
 'use client'
 import { getSession, signIn } from "next-auth/react"; // Import the signIn function from NextAuth for authentication.
 import Link from "next/link";
+import { useEffect } from "react";
 
 
 export default function LoginPage() {
-//    if (session) {
-//        console.log(session)
-//    }
-    const session = getSession()
+    //    if (session) {
+    //        console.log(session)
+    //    }
+   
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const session = await getSession();
+            if (session) {
+                console.log(session.user)
+            }
+        }
+        fetchData()
+    }, [])
 
     const callbackUrl = "/team"; // Define a callback URL or use a default one.
 

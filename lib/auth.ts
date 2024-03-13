@@ -1,4 +1,4 @@
-import type { NextAuthOptions } from "next-auth";
+import type { NextAuthOptions, Session } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import prisma from "./prisma";
@@ -13,10 +13,10 @@ type Account = {
 
 export const authOptions: NextAuthOptions = {
 	pages: {
-		signIn: "/login", 
+		signIn: "/login",
 	},
 	session: {
-		strategy: "jwt", 
+		strategy: "jwt",
 	},
 	secret: process.env.NEXTAUTH_SECRET,
 
@@ -35,6 +35,22 @@ export const authOptions: NextAuthOptions = {
 			}
 			return Promise.resolve(false);
 		},
+		session: async ({ session }) => {
+			if (!session.user) {
+				throw new Error("No user found")
+			}
+			const email = session.user.email;
+			const user = await prisma.user.findFirst({
+				where: { email },
+			});
+			if (!user) {
+				throw new Error("No user found");
+			}
+			const sessionData = {
+				...session
+			}
+			return Promise.resolve(sessionData);
+		}
 	},
 
 	adapter: PrismaAdapter(prisma),
