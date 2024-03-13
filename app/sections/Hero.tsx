@@ -16,10 +16,10 @@ export default function Hero(){
 
         A week of Technical <br /> Innovation
       </div>
-      <button className="bg-[#0281F0] text-white laptop:p-[1rem] mobile:p-[0.551rem] laptop:text-xl mobile:text-sm font-ptMono rounded-[0.5rem] flex gap-[1rem] shadow-inner items-center">
+      {/* <button className="bg-[#0281F0] text-white laptop:p-[1rem] mobile:p-[0.551rem] laptop:text-xl mobile:text-sm font-ptMono rounded-[0.5rem] flex gap-[1rem] shadow-inner items-center">
         Register Now
         <Image src='/hero/arrow.svg' alt="Logo" width={16} height={16}/>
-      </button>
+      </button> */}
 
       </section>
       <section className="flex flex-col justify-between items-center w-full absolute bottom-0 bg-gradient-to-b from-[rgba(0,0,0,.1)] to-[rgba(0,0,0,1)]">
