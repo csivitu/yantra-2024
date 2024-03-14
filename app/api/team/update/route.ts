@@ -5,7 +5,7 @@ import {prisma} from "@/lib/call"
 
 export async function PUT(request:Request){
     try{
-        const {description, gLink, fLink, dLink} = await request.json();
+        const {description, gLink, fLink} = await request.json();
         const session = await getServerSession(authOptions);
         if (!session) {
             return NextResponse.json({message:"Session not found"})
@@ -20,21 +20,20 @@ export async function PUT(request:Request){
             where: {name: session.user.name},
 
         })
-        const teamName = user?.teamName;
-        if(!teamName){
-            return NextResponse.json({message:"You are not authorized to perform this action"})
-        }
-        const response = await prisma.team.update({
-            where:{
-                teamName: teamName,
-            },
-            data:{
-                description: description,
-                gLink: gLink,
-                fLink: fLink,
-                dLink: dLink
-            }
-        })
+//        const teamName = user?.teamName;
+//        if(!teamName){
+//            return NextResponse.json({message:"You are not authorized to perform this action"})
+//        }
+//        const response = await prisma.team.update({
+//            where:{
+//                teamName: teamName,
+//            },
+//            data:{
+//                description: description,
+//                gLink: gLink,
+//                fLink: fLink,
+//            }
+//        })
         return NextResponse.json({message:"Team created successfully"})
     } catch(err){
         //console.log(err);

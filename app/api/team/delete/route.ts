@@ -18,18 +18,18 @@ export async function POST(request:Request){
         const user = await prisma.user.findFirst({
             where : {name:session.user.name},
         })
-        await prisma.user.update({
-            where : {name:session.user.name},
-            data:{
-                teamName:null,
-            }
-        })
-        await prisma.team.update({
-            where : {userName:session.user.name},
-            data:{
-                userName:null,
-            }
-        })
+//        await prisma.user.update({
+//            where : {name:session.user.name},
+//            data:{
+//                teamName:null,
+//            }
+//        })
+//        await prisma.team.update({
+//            where : {userName:session.user.name},
+//            data:{
+//                userName:null,
+//            }
+//        })
         return NextResponse.json({message:"User deleted"})
 
     }

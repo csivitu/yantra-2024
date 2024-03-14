@@ -39,29 +39,29 @@ export default async function Dashboard(){
         </Link>
        )
     }
-    if(!user.teamName){
-        return(
-        <div>
-            <h1>Dashboard</h1>
-            <p>Welcome {user.name}</p>
-            <p>Join a team to get started</p>
-            <Page />
-        </div>
-        )
-    }
-    const team= await getTeamInfo(user.teamName)
-    if(!team){
-        return(
-            <div>
-                <h1>Dashboard</h1>
-                <p>Welcome {user.name}</p>
-                <p>Join a team to get started</p>
-                <Page />
-            </div>
-            )
-    }
-
-    return renderTeamDashboard(user,team)//need to sort this
+//    if(!user.teamName){
+//        return(
+//        <div>
+//            <h1>Dashboard</h1>
+//            <p>Welcome {user.name}</p>
+//            <p>Join a team to get started</p>
+//            <Page />
+//        </div>
+//        )
+//    }
+//    const team= await getTeamInfo(user.teamName)
+//    if(!team){
+//        return(
+//            <div>
+//                <h1>Dashboard</h1>
+//                <p>Welcome {user.name}</p>
+//                <p>Join a team to get started</p>
+//                <Page />
+//            </div>
+//            )
+//    }
+//
+//    return renderTeamDashboard(user,team)//need to sort this
 }
 
 function renderTeamDashboard(user:{name:string},team:Team){
@@ -74,7 +74,6 @@ function renderTeamDashboard(user:{name:string},team:Team){
         <p>Description: {team?.description}</p>
         <p>Github Link: {team.gLink ? team.gLink : "Not set"}</p>
         <p>Figma Link: {team.fLink ? team.fLink : "Not set"}</p>
-        <p>Deploy Link: {team.dLink ? team.dLink : "Not set"}</p>
         <Form/>
         <Link href="/team/update">Update Team Info</Link>
        </div>

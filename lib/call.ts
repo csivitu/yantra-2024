@@ -31,6 +31,6 @@ export type Team = {
     updatedAt  : Date 
     gLink      : string | null
     fLink      : string | null
-    dLink      : string | null
+    //dLink      : string | null
     userName   : string | null
 }

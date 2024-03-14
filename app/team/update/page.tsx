@@ -17,7 +17,7 @@ export default function Form() {
                 description: formData.get('description'),
                 gLink: formData.get('gLink'),
                 fLink: formData.get('fLink'),
-                dLink: formData.get('dLink'),
+                //dLink: formData.get('dLink'),
                 }),
         });
 
@@ -43,12 +43,6 @@ export default function Form() {
             <label>Figma Link</label>
             <input
                 name="fLink"
-                className="border border-black text-black"
-                type="text"
-            />
-            <label>Deployment Link</label>
-            <input
-                name="dLink"
                 className="border border-black text-black"
                 type="text"
             />
