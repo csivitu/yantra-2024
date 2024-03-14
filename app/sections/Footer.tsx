@@ -7,11 +7,11 @@ export default function Footer() {
         <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-full px-[28px] py-[28px] text-center ">
           MENU
         </div>
-        <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-2xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center  ">
-          <div>Home</div>
-          <div>About Us</div>
-          <div>Team</div>
-          <div>MainHack</div>
+        <div className="px-[3rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center  ">
+          <div className="w-full">Home</div>
+          <div className="w-full whitespace-nowrap">About Us</div>
+          <div className="w-full">Team</div>
+          <div className="w-full whitespace-nowrap">Main Hack</div>
         </div>
       </section>
       <section className="flex flex-col laptop:w-[70%] justify-between gap-[1rem] mobile:w-full">
@@ -39,7 +39,7 @@ export default function Footer() {
         <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-full px-[28px] py-[28px] text-center ">
           LINKS
         </div>
-        <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-2xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center ">
+        <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center ">
           <div className="flex w-full flex-row justify-around items-center gap-[1rem]">
             <p>Twitter</p>
             <Image

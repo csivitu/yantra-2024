@@ -13,7 +13,7 @@ const page = () => {
     <main className="w-full gap-[4rem] flex flex-col py-[1rem] font-schabo bg-black">
       <MainHackHero />
       <AboutHack />
-      <Timeline />
+      {/* <Timeline /> */}
       {/* Try this with gridOption = 3 and gridOption = 4. 3 looks better imo */}
       <Tracks gridOption={4} />
       <PrizePool />

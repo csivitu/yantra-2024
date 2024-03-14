@@ -14,7 +14,7 @@ export default function Hero(){
       <div className="text-white laptop:text-[98px] mobile:text-[46px] font-medium text-center laptop:leading-[7rem] relative py-[1rem] px-[1rem]">
       <Image src='/hero/plus.svg' alt="Logo" width={20} height={20} className="absolute left-0 top-0"/>
 
-        A week of Technical <br /> Innovation
+        A WEEK OF TECHNICAL <br /> INNOVATION
       </div>
       {/* <button className="bg-[#0281F0] text-white laptop:p-[1rem] mobile:p-[0.551rem] laptop:text-xl mobile:text-sm font-ptMono rounded-[0.5rem] flex gap-[1rem] shadow-inner items-center">
         Register Now

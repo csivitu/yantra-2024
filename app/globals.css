@@ -31,6 +31,10 @@
     html{
         overflow-x: hidden;
     }
+    *{
+        margin: 0;
+        padding: 0;
+    }
     @keyframes move-rtl {
         0% {
             transform: translateX(0);
