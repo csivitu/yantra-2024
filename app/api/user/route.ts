@@ -31,7 +31,7 @@ export async function PUT(request:Request){
         
         })
 
-        return NextResponse.json({ message: "Team updated successfully" },{status:200});
+        return NextResponse.json({ message: "User updated successfully" },{status:200});
     } catch (error) {
         console.error(error);
         return NextResponse.json({ message: "An error occurred" },{status:500});
