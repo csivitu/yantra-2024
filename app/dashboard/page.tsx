@@ -1,81 +1,39 @@
-import {getSession} from 'next-auth/react'
-import {getServerSession} from 'next-auth'
-import {authOptions} from "@/lib/auth"
-import Page from './redirect'
-import Link from 'next/link'
-import Form from './form'
-import {getTeamInfo, getUserInfo,Team} from '@/lib/call'
-import {NextResponse} from 'next/server'
+'use client'
 
-export default async function Dashboard(){
-    //const session = await getSession()--not working here
-    const session = await getServerSession(authOptions)  
-    if(!session){
-       return(
-        <Link href="/login">
-        Go to Login
-        </Link>
-       )
-    }
-    if(!session.user){
-       return(
-        <Link href="/login">
-        Go to Login
-        </Link>
-       )
-    }
-    if(!session.user.name){
-       return(
-        <Link href="/login">
-        Go to Login
-        </Link>
-       )
-    }
-    const user = await getUserInfo(session.user.name)
-    if(!user){
-       return(
-        <Link href="/login">
-        Go to Login
-        </Link>
-       )
-    }
-//    if(!user.teamName){
-//        return(
-//        <div>
-//            <h1>Dashboard</h1>
-//            <p>Welcome {user.name}</p>
-//            <p>Join a team to get started</p>
-//            <Page />
-//        </div>
-//        )
-//    }
-//    const team= await getTeamInfo(user.teamName)
-//    if(!team){
-//        return(
-//            <div>
-//                <h1>Dashboard</h1>
-//                <p>Welcome {user.name}</p>
-//                <p>Join a team to get started</p>
-//                <Page />
-//            </div>
-//            )
-//    }
-//
-//    return renderTeamDashboard(user,team)//need to sort this
-}
+import { getTeam } from "@/lib/call";
+import { UserSession } from "@/types/user";
+import { getSession } from "next-auth/react"
+import { useEffect, useState } from "react";
+import axios from 'axios';
 
-function renderTeamDashboard(user:{name:string},team:Team){
+export default function Dashboard() {
+
+    const [sessionUser, setSessionUser] = useState<UserSession | null>(null)
+    const [team, setTeam] = useState<any>(null)
+
+
+    useEffect(() => {
+        const fetchSession = async () => {
+            try {
+                const session = await getSession();
+                if (session && session.user && session.user.name && session.user.email && session.user.image) {
+                    setSessionUser(session.user as UserSession)
+                    const team = await axios.get('/api/team')
+                    setTeam(team)
+                } else {
+                    setSessionUser(null)
+                }
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        fetchSession()
+    }, [])
+
     return (
         <div>
-        <h1>Dashboard</h1>
-        <p>Welcome {user.name}</p>
-        <p>Team Name: {team?.teamName}</p>
-        <p>Team Code: {team?.teamCode}</p>
-        <p>Description: {team?.description}</p>
-        <p>Github Link: {team.gLink ? team.gLink : "Not set"}</p>
-        <p>Figma Link: {team.fLink ? team.fLink : "Not set"}</p>
-        <Form/>
-        <Link href="/team/update">Update Team Info</Link>
-       </div>
+            {sessionUser && <h1>Welcome {sessionUser.name}</h1>}
+        </div>
     )
 }
+
