@@ -8,12 +8,12 @@ export async function PUT(request: Request) {
         const { githubProfile, linkedinProfile, projects, bio } = await request.json();
         const session = await getServerSession(authOptions);
 
-        if (!session || !session.user || !session.user.name) {
+        if (!session || !session.user || !session.user.name || !session.user.email) {
             return NextResponse.json({ message: "Invalid session or user" }, { status: 401 });
         }
 
         const user = await prisma.user.findFirst({
-            where: { name: session.user.name },
+            where: { email: session.user.email },
         });
 
         if (!user) {
@@ -21,7 +21,7 @@ export async function PUT(request: Request) {
         }
 
         await prisma.user.update({
-            where: { name: session.user.name },
+            where: { email: session.user.email },
             data: {
                 githubProfile: githubProfile,
                 linkedinProfile: linkedinProfile,
@@ -40,12 +40,12 @@ export async function GET() {
     try {
         const session = await getServerSession(authOptions);
 
-        if (!session || !session.user || !session.user.name) {
+        if (!session || !session.user || !session.user.name || !session.user.email) {
             return NextResponse.json({ message: "Invalid session or user" }, { status: 401 });
         }
 
         const user = await prisma.user.findFirst({
-            where: { name: session.user.name },
+            where: { email: session.user.email },
             include: {
                 team: true
             }
