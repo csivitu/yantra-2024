@@ -31,4 +31,17 @@
     html{
         overflow-x: hidden;
     }
+    @keyframes move-rtl {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+        
+    }
+    .marquee{
+        animation: move-rtl 6000ms linear infinite;
+        white-space: nowrap;
+    }
 }
