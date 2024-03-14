@@ -7,7 +7,7 @@ export default function Form() {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        await fetch(`/api/team/post`, {
+        await fetch(`/api/team`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
