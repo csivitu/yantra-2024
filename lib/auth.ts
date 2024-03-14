@@ -36,7 +36,7 @@ export const authOptions: NextAuthOptions = {
 			return Promise.resolve(false);
 		},
 		session: async ({ session }) => {
-			if (!session.user) {
+			if (!session.user || !session.user.email) {
 				throw new Error("No user found")
 			}
 			const email = session.user.email;
