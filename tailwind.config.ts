@@ -15,6 +15,7 @@ const config: Config = {
           'hero-background':'url("/hero/hero.svg")',
           'herohack-background':'url("/backgrounds/HeroPattern.svg")',
           'herohackfaq' : 'url("/backgrounds/Mathematics.svg")',
+          'prizedots' : 'url("/backgrounds/Dots.svg")',
           'imgYantra':`url('/yantra/img.svg')`,
           
       },
