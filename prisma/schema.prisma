@@ -11,18 +11,23 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(uuid())
-  name          String    @unique
-  email         String?   @unique
-  password      String?
-  emailVerified DateTime? @map("email_verified")
-  image         String?
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  accounts      Account[]
-  sessions      Session[]
-  teamName      String?   @map("team_name")
-  Team          Team?
+  id              String    @id @default(uuid())
+  name            String    @unique
+  email           String    @unique
+  password        String?
+  emailVerified   DateTime? @map("email_verified")
+  image           String?
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+  accounts        Account[]
+  sessions        Session[]
+  githubProfile   String    @default("") @map("github_profile")
+  linkedinProfile String    @default("") @map("linkedin_profile")
+  projects        String    @default("") @map("projects")
+  bio             String    @default("") @map("bio")
+  teamId          String?
+  team            Team?     @relation("UserToTeam", fields: [teamId], references: [id])
+  createdTeams    Team[]    @relation("TeamCreatedByUser")
 
   @@map("users")
 }
@@ -73,30 +78,32 @@ model VerificationRequest {
 
 model Team {
   id          String   @id @default(cuid())
-  teamName    String   @unique
-  teamCode    String   @unique
+  teamName    String   @unique @map("team_name")
+  teamCode    String   @unique @map("team_code")
   description String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-  gLink       String? //github link
-  fLink       String? //figma link
-  dLink       String? //deployed link
-  userName    String?  @unique @map("user_name")
-  createdBy   User?    @relation(fields: [userName], references: [name])
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  githubLink  String?  @map("github_link")
+  figmaLink   String?  @map("figma_link")
+  // dLink       String? //deployed li
+  users       User[]   @relation("UserToTeam")
+  createdBy   User?    @relation("TeamCreatedByUser", fields: [createdById], references: [id])
+  createdById String?
+  status      String   @default("Team pending review")
 
   @@map("teams")
 }
 
 model Events {
   id          String   @id @default(cuid())
-  eventName   String   @unique
-  eventType   String
+  eventName   String   @unique @map("event_name")
+  eventType   String   @map("event_type")
   description String
-  clubName    String
+  clubName    String   @map("club_name")
   venue       String
-  eventStart  DateTime
-  eventEnd    DateTime
-  isOvernight Boolean
+  eventStart  DateTime @map("event_start")
+  eventEnd    DateTime @map("event_end")
+  isOvernight Boolean  @map("is_overnight")
 
   @@map("events")
 }
