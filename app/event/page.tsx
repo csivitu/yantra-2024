@@ -12,7 +12,7 @@ const EventsPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/event?page=${page}&limit=10&type=${eventType}&name=${searchTerm}`);
+        const response = await axios.get(`/api/event?page=${page}&limit=10&type=${eventType}&name=${searchTerm}`);
         setEvents(response.data.events);
       }
       catch (e) {
