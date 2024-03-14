@@ -1,5 +1,5 @@
 import pkg from 'pg';
-import { faker } from '@faker-js/faker';
+import readXlsxFile from 'read-excel-file/node';
 import 'dotenv/config';
 
 const { Pool } = pkg;
@@ -9,16 +9,11 @@ const pool = new Pool({
 });
 
 async function main() {
-    for (let i = 0; i < 100; i++) {
-        const eventName = faker.lorem.words(3);
-        const eventType = faker.lorem.word();
-        const description = faker.lorem.sentence();
-        const clubName = faker.company.name();
-        const venue = faker.location.street();
-        const eventStart = faker.date.future();
-        const eventEnd = faker.date.future();
-        const isOvernight = faker.datatype.boolean();
-        const id = faker.string.uuid();
+    const rows = await readXlsxFile('events.xlsx'); 
+    rows.shift(); 
+
+    for (const row of rows) {
+        const [eventName, eventType, description, clubName, venue, eventStart, eventEnd, isOvernight, id] = row;
 
         await pool.query(
             `INSERT INTO events ("eventName", "eventType", "description", "clubName", "venue", "eventStart", "eventEnd", "isOvernight", "id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
