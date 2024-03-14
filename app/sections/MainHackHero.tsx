@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
+import Link from "next/link";
 
 type MainHackHeroProps = {};
 
@@ -27,7 +28,17 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
             />
           </div>
           <div>
-            <button>Know More</button>
+            <Link href="#">
+              <button className="flex flex-row gap-4 justify-center items-center font-ptMono p-3 font-light m-3 text-2xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out">
+                KNOW MORE
+                <Image
+                  src="/icons/arrow.svg"
+                  alt="Icon"
+                  width={20}
+                  height={20}
+                />
+              </button>
+            </Link>
           </div>
         </div>
         <div className="bg-[#090909] w-full flex mobile:flex-col laptop:flex-row justify-between items-center mobile:py-[1rem] gap-6 laptop:py-4 px-[6rem]">

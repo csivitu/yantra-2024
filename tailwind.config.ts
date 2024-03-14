@@ -14,6 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
           'hero-background':'url("/hero/hero.svg")',
           'herohack-background':'url("/backgrounds/HeroPattern.svg")',
+          'herohackfaq' : 'url("/backgrounds/Mathematics.svg")',
           'imgYantra':`url('/yantra/img.svg')`,
           
       },
