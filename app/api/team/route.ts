@@ -198,7 +198,7 @@ export async function DELETE() {
             data: {
                 users: {
                     disconnect: {
-                        name: session.user.name
+                        email: session.user.email
                     }
                 }
             }
