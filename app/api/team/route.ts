@@ -32,7 +32,7 @@ export async function POST(request: Request) {
                 teamName: teamName,
                 description: description,
                 teamCode: inviteCode,
-                createdBy: { connect: { name: session.user.name } },
+                createdBy: { connect: { email: session.user.email } },
             },
         });
         await prisma.user.update({
