@@ -1,26 +1,27 @@
-
 import { authOptions } from "@/lib/auth";
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { prisma } from "@/lib/call";
 
-export async function POST(request:Request) {
+export async function POST(request: Request) {
     try {
         const { teamName, teamCode } = await request.json();
         const session = await getServerSession(authOptions);
 
         if (!session || !session.user || !session.user.name) {
-            return NextResponse.json({ message: "Invalid session or user" });
+            return NextResponse.json({ message: "Invalid session or user" },{status:401});
         }
 
-        const user = await prisma.user.findFirst({ where: { name: session.user.name }, });
+        const user = await prisma.user.findFirst({
+            where: { name: session.user.name },
+        });
 
         if (!user) {
-            return NextResponse.json({ message: "User not found" });
+            return NextResponse.json({ message: "User not found" },{status:404});
         }
 
         if (user.teamId) {
-            return NextResponse.json({ message: "User already part of a team" });
+            return NextResponse.json({ message: "User already part of a team" },{status:400});
         }
 
         const team = await prisma.team.findFirst({
@@ -28,33 +29,30 @@ export async function POST(request:Request) {
         });
 
         if (!team) {
-            return NextResponse.json({ message: "Invalid team name" });
+            return NextResponse.json({ message: "Invalid team name" },{status:400});
+        }
+        if(team.id === user.teamId){
+            return NextResponse.json({message:"User already part of this team"},{status:400})
         }
 
-        const userName = session.user.name;
-        const teamMembers = await prisma.team.findMany({
+        const teamMembersCount = await prisma.team.count({
             where: { teamName: teamName },
-            include: { users: true },
         });
 
-        console.log(teamMembers);
+        if (teamMembersCount >= 4) {
+            return NextResponse.json({ message: "Team full" },{status:400});
+        }
 
-       // if (teamMembers.length < 4) {
-       //     // Number of existing team members should be less than 4
+        if (teamCode !== team.teamCode) {
+            return NextResponse.json({ message: "Invalid team code" },{status:400});
+        }
 
-       //     if (teamCode === team.teamCode && userName !== team.userName && session.user.name) {
-       //         const userUpdate = await prisma.user.update({
-       //             where: { name: session.user.name },
-       //             data: { teamId: teamName },
-       //         });
+        await prisma.user.update({
+            where: { name: session.user.name },
+            data: { teamId: team.id },
+        });
 
-       //         return NextResponse.json({ message: "Team created successfully" });
-       //     } else {
-       //         return NextResponse.json({ message: "Invalid team code or already part of the team" });
-       //     }
-       // } else {
-       //     return NextResponse.json({ message: "Team full" });
-        //}
+        return NextResponse.json({ message: "Team joined successfully" },{status:200});
     } catch (error) {
         console.error(error);
         return NextResponse.json({ message: "Error" });

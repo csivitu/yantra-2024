@@ -34,18 +34,18 @@ export default async function Page(){
         </Link>
        )
     }
-//    if(!user.teamName){
-//        return (
-//                <div>
-//                <h1>Team Builder</h1>
-//                <Link href="./team/create">Create Team</Link>
-//                <Link href="./team/join">Join Team</Link>
-//                </div>
-//               )
-//    } 
-//    return (
-//        <Link href="/dashboard">
-//        Go to Dashboard
-//        </Link>
-//    )
+    if(!user.teamId){
+        return (
+                <div>
+                <h1>Team Builder</h1>
+                <Link href="./team/create">Create Team</Link>
+                <Link href="./team/join">Join Team</Link>
+                </div>
+               )
+    } 
+    return (
+        <Link href="/dashboard">
+        Go to Dashboard
+        </Link>
+    )
 }

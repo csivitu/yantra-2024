@@ -39,29 +39,29 @@ export default async function Dashboard(){
         </Link>
        )
     }
-//    if(!user.teamName){
-//        return(
-//        <div>
-//            <h1>Dashboard</h1>
-//            <p>Welcome {user.name}</p>
-//            <p>Join a team to get started</p>
-//            <Page />
-//        </div>
-//        )
-//    }
-//    const team= await getTeamInfo(user.teamName)
-//    if(!team){
-//        return(
-//            <div>
-//                <h1>Dashboard</h1>
-//                <p>Welcome {user.name}</p>
-//                <p>Join a team to get started</p>
-//                <Page />
-//            </div>
-//            )
-//    }
-//
-//    return renderTeamDashboard(user,team)//need to sort this
+    if(!user.teamId){
+        return(
+        <div>
+            <h1>Dashboard</h1>
+            <p>Welcome {user.name}</p>
+            <p>Join a team to get started</p>
+            <Page />
+        </div>
+        )
+    }
+    const team= await getTeamInfo(user.teamId)
+    if(!team){
+        return(
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome {user.name}</p>
+                <p>Join a team to get started</p>
+                <Page />
+            </div>
+            )
+    }
+
+    return renderTeamDashboard(user,team)//need to sort this
 }
 
 function renderTeamDashboard(user:{name:string},team:Team){
