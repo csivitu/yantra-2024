@@ -37,7 +37,7 @@ export async function POST(){
             }
         
         })
-        return NextResponse.json({message:"User deleted"},{status:200})
+        return NextResponse.json({message:"User removed from the team"},{status:200})
 
     }
     catch(err){

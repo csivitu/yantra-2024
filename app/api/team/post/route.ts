@@ -7,11 +7,11 @@ export async function POST(request:Request) {
     try {
         const inviteCode = generateInviteCode();
         const { teamName, description } = await request.json();
-//        const session = await getServerSession(authOptions);
-//
-//        if (!session || !session.user || !session.user.name) {
-//            return NextResponse.json({ message: "Invalid session or user" },{status:401});
-//        }
+        const session = await getServerSession(authOptions);
+
+        if (!session || !session.user || !session.user.name) {
+            return NextResponse.json({ message: "Invalid session or user" },{status:401});
+        }
 
         const user = await prisma.user.findFirst({
             where: { name: session.user.name },
