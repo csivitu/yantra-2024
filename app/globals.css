@@ -41,7 +41,7 @@
         
     }
     .marquee{
-        animation: move-rtl 6000ms linear infinite;
+        animation: move-rtl 9500ms linear infinite;
         white-space: nowrap;
     }
 }
