@@ -4,8 +4,10 @@ export interface EventsType {
     eventType: string;
     description: string;
     clubName: string;
+    collaboratingWith: string | null;
     venue: string;
     eventStart: string;
     eventEnd: string;
-    isOvernight: boolean;
+    isOvernight: string;
+    logo: string;
 }

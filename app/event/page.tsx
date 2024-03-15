@@ -59,6 +59,9 @@ const EventsPage = () => {
             <p>Venue: {event.venue}</p>
             <p>Start Date: {new Date(event.eventStart).toLocaleString()}</p>
             <p>End Date: {new Date(event.eventEnd).toLocaleString()}</p>
+            <p>Is Overnight: {event.isOvernight}</p>
+            {event.collaboratingWith && <p>Collaborating With: {event.collaboratingWith}</p>}
+
           </li>
         ))}
       </ul>

@@ -12,7 +12,7 @@ datasource db {
 
 model User {
   id              String    @id @default(uuid())
-  name            String    
+  name            String
   email           String    @unique
   password        String?
   emailVerified   DateTime? @map("email_verified")
@@ -95,15 +95,17 @@ model Team {
 }
 
 model Events {
-  id          String   @id @default(cuid())
-  eventName   String   @unique @map("event_name")
-  eventType   String   @map("event_type")
-  description String
-  clubName    String   @map("club_name")
-  venue       String
-  eventStart  DateTime @map("event_start")
-  eventEnd    DateTime @map("event_end")
-  isOvernight Boolean  @map("is_overnight")
+  id                String  @id @default(cuid())
+  eventName         String  @unique @map("event_name")
+  eventType         String  @map("event_type")
+  description       String  @map("description")
+  clubName          String  @map("club_name")
+  collaboratingWith String? @map("collaborating_with")
+  venue             String  @map("venue")
+  eventStart        String  @map("event_start")
+  eventEnd          String  @map("event_end")
+  isOvernight       String  @map("is_overnight")
+  logo              String  @map("logo")
 
   @@map("events")
 }
