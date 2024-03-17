@@ -11,12 +11,15 @@ export default function Navbar() {
         height={130}
         className="mobile:w-[40%] laptop:w-[15%]"
       />
-      </Link> 
+      </Link>event 
       <div className=" laptop:w-[53%]  justify-around items-center text-white font-ptMono font-light laptop:flex mobile:hidden">
         <Link href="/#about">
           <p>About Us</p>
         </Link>
-        {/* <p>Events</p> */}
+        <Link href={"/event"}>
+        <p>Events</p>
+
+        </Link>
         <Link href={'/#patrons'}>
         <p>Team</p>
         </Link>
