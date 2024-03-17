@@ -17,6 +17,9 @@ export default function Navbar() {
           <p>About Us</p>
         </Link>
         {/* <p>Events</p> */}
+        <Link href={'/event'}>
+        <p>Events</p>
+        </Link>
         <Link href={'/#patrons'}>
         <p>Team</p>
         </Link>

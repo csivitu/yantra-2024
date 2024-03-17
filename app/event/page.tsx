@@ -47,7 +47,7 @@ const EventsPage = () => {
      <div className="flex flex-col justify-between gap-[1rem] items-center w-full">
       {
         events.map((event, index) => (
-          <EventCard key={index} description={event.description} name={event.eventName} club={event.clubName} date={event.eventStart} venue={event.venue} event_name={event.eventName} />
+          <EventCard key={index} description={event.description} name={event.eventName} club={event.clubName} date={event.eventStart} venue={event.venue} event_name={event.eventName} logo={event.logo}/>
         ))
       }
 {/* <EventCard/>
