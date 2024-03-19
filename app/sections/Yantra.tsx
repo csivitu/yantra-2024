@@ -1,6 +1,6 @@
 export default function Yantra() {
   return (
-    <main className="w-full flex justify-around items-start laptop:min-h-[80vh] laptop:flex-row mobile:flex-col mobile:px-[1rem]">
+    <main id = "yantra" className="w-full flex justify-around items-start laptop:min-h-[80vh] laptop:flex-row mobile:flex-col mobile:px-[1rem]">
       <section className="flex flex-col laptop:w-[45%] gap-[12px] h-full mobile:w-full">
         <div className="font-ptMono text-white text-5xl border-[1px] border-[#292929] rounded-[20px] px-[28px] py-[28px] text-center " id="about">
           WHAT IS YANTRA?

@@ -6,7 +6,7 @@ import { useRef } from "react"
 export default function Hero(){
   const rows=useRef<number[]>([1,2,3,4,5,6,7,8,9,10,11,12])
     return (
-       <main className="flex h-screen w-full flex-col justify-between items-center bg-hero-background bg-no-repeat bg-cover bg-black px-[1rem] py-[0.5rem] gap-[1rem] overflow-x-hidden relative mobile:bg-fixed">
+       <main id="hero" className="flex h-screen w-full flex-col justify-between items-center bg-hero-background bg-no-repeat bg-cover bg-black px-[1rem] py-[0.5rem] gap-[1rem] overflow-x-hidden relative mobile:bg-fixed">
       <Navbar/>
       <section className="flex flex-col z-[2] w-fit justify-center items-center absolute top-[50%] translate-y-[-55%] ">
       <Image src='/hero/mainLogo.svg' alt="Logo" width={300} height={300} className="mobile:w-[45%]"/>

@@ -8,10 +8,10 @@ export default function Footer() {
           MENU
         </div>
         <div className="px-[3rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center  ">
-          <div className="w-full">Home</div>
-          <div className="w-full whitespace-nowrap">About Us</div>
-          <div className="w-full">Team</div>
-          <div className="w-full whitespace-nowrap">Main Hack</div>
+          <Link href = "#home" className="w-full">Home</Link>
+          <Link href="#yantra" className="w-full whitespace-nowrap">About Us</Link>
+          {/* <div className="w-full">Team</div>
+          <div className="w-full whitespace-nowrap">Main Hack</div> */}
         </div>
       </section>
       <section className="flex flex-col laptop:w-[70%] justify-between gap-[1rem] mobile:w-full">
@@ -40,7 +40,10 @@ export default function Footer() {
           LINKS
         </div>
         <div className="px-[4rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center ">
-          <div className="flex w-full flex-row justify-around items-center gap-[1rem]">
+          <Link href="https://twitter.com/VIT_univ"
+            className="flex w-full flex-row justify-around items-center gap-[1rem] transition-colors duration-200 hover:text-purple-500"
+
+          >
             <p>Twitter</p>
             <Image
               width={20}
@@ -48,8 +51,9 @@ export default function Footer() {
               src={"/icons/Brands/Vector.svg"}
               alt="Twitter"
             />
-          </div>
-          <div className="flex w-full flex-row justify-around items-center gap-[1rem]">
+          </Link>
+          <Link href="https://www.linkedin.com/school/vellore-institute-of-technology/mycompany/" 
+            className="flex w-full flex-row justify-around items-center gap-[1rem] transition-colors duration-200 hover:text-purple-500">
             <p>Linkedin</p>
             <Image
               width={20}
@@ -57,8 +61,9 @@ export default function Footer() {
               src={"/icons/linkedin/Brands/Vector.svg"}
               alt="Linkedin"
             />
-          </div>
-          <div className="flex w-full flex-row justify-around items-center gap-[1rem]">
+          </Link>
+          <Link href="https://www.youtube.com/channel/UCA9pirjKrKlg2bCvPKRDkyg" 
+            className="flex w-full flex-row justify-around items-center gap-[1rem] transition-colors duration-200 hover:text-purple-500">
             <p>Youtube</p>
             <Image
               width={20}
@@ -66,9 +71,10 @@ export default function Footer() {
               src={"/icons/yt/Vector.svg"}
               alt="Youtube"
             />
-          </div>
+          </Link>
 
-          <div className="flex w-full flex-row justify-around items-center gap-[1rem]">
+          <Link href="https://www.instagram.com/sw_vit/" 
+            className="flex w-full flex-row justify-around items-center gap-[1rem] transition-colors duration-200 hover:text-purple-500">
             <p>Instagram</p>
             <Image
               width={20}
@@ -76,7 +82,7 @@ export default function Footer() {
               src={"/icons/Brands/Vector.svg"}
               alt="Instagram"
             />
-          </div>
+          </Link>
         </div>
       </section>
     </footer>
