@@ -1,10 +1,8 @@
-"use client"
 import Image from "next/image"
 import Navbar from "../components/Navbar"
-import Test from "../components/AnimationHero"
-import { useRef } from "react"
+import AnimationHero from "../components/AnimationHero"
 export default function Hero() {
-  const rows = useRef<number[]>([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+  const rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,]
   return (
     <main id="hero" className="flex h-screen w-full flex-col justify-between items-center bg-hero-background bg-no-repeat bg-cover bg-black px-[1rem] py-[0.5rem] gap-[1rem] overflow-x-hidden relative mobile:bg-fixed">
       <Navbar />
@@ -23,8 +21,8 @@ export default function Hero() {
 
       </section>
       <section className="flex flex-col justify-between items-center w-full absolute bottom-0 bg-gradient-to-b from-[rgba(0,0,0,.1)] to-[rgba(0,0,0,1)]">
-        {rows.current.map((val: number, index: number) => {
-          return (<Test rowNumber={val} key={index} />)
+        {rows.map((val: number, index: number) => {
+          return (<AnimationHero rowNumber={val} key={index} />)
         })}
       </section>
     </main>
