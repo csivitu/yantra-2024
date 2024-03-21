@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Navbar from "../components/Navbar"
 import AnimationHero from "../components/AnimationHero"
+import InnovationText from "../components/Innovation"
 export default function Hero() {
   const rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,]
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
         <div className="text-white laptop:text-[98px] mobile:text-[46px] font-medium text-center laptop:leading-[7rem] relative py-[1rem] px-[1rem]">
           <Image src='/hero/plus.svg' alt="Logo" width={20} height={20} className="absolute left-0 top-0" />
 
-          A WEEK OF TECHNICAL <br /> INNOVATION
+          A WEEK OF TECHNICAL <br /> <InnovationText/>
         </div>
         {/* <button className="bg-[#0281F0] text-white laptop:p-[1rem] mobile:p-[0.551rem] laptop:text-xl mobile:text-sm font-ptMono rounded-[0.5rem] flex gap-[1rem] shadow-inner items-center">
         Register Now
