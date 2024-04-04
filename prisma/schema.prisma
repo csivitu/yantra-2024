@@ -23,6 +23,7 @@ model User {
   sessions        Session[]
   githubProfile   String    @default("") @map("github_profile")
   linkedinProfile String    @default("") @map("linkedin_profile")
+  otherProfile    String    @default("") @map("other_profile")
   projects        String    @default("") @map("projects")
   bio             String    @default("") @map("bio")
   teamId          String?
@@ -77,19 +78,22 @@ model VerificationRequest {
 }
 
 model Team {
-  id          String   @id @default(cuid())
-  teamName    String   @unique @map("team_name")
-  teamCode    String   @unique @map("team_code")
-  description String?
-  createdAt   DateTime @default(now()) @map("created_at")
-  updatedAt   DateTime @updatedAt @map("updated_at")
-  githubLink  String?  @map("github_link")
-  figmaLink   String?  @map("figma_link")
+  id              String   @id @default(cuid())
+  teamName        String   @unique @map("team_name")
+  teamCode        String   @unique @map("team_code")
+  description     String?
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+  githubLink      String?  @map("github_link")
+  figmaLink       String?  @map("figma_link")
+  track           String?  @map("track")
+  ideaDescription String?  @map("idea_description")
+  ideaLink        String?  @map("idea_link")
   // dLink       String? //deployed li
-  users       User[]   @relation("UserToTeam")
-  createdBy   User?    @relation("TeamCreatedByUser", fields: [createdById], references: [id])
-  createdById String?
-  status      String   @default("Team pending review")
+  users           User[]   @relation("UserToTeam")
+  createdBy       User?    @relation("TeamCreatedByUser", fields: [createdById], references: [id])
+  createdById     String?
+  status          String   @default("Team pending review")
 
   @@map("teams")
 }

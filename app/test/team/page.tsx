@@ -5,7 +5,6 @@ import { getSession } from 'next-auth/react'
 import React, { useEffect, useState } from 'react'
 import { UserSession } from '@/types/user';
 import axios from 'axios';
-import { ReactFormState } from 'react-dom/client';
 import { Team } from '@/types/team';
 
 export default function TeamPage() {
@@ -54,17 +53,12 @@ export default function TeamPage() {
                </div>
             ) : (
                <div>
-                  <form onSubmit={handleSubmit}>
-                     <label>
-                        Team Name:
-                        <input type="text" value={teamName} onChange={(e) => setTeamName(e.target.value)} />
-                     </label>
-                     <label>
-                        Description:
-                        <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
-                     </label>
-                     <button type="submit">Create Team</button>
-                  </form>
+                  <Link href = "/test/team/create">
+                     Create team
+                  </Link>
+                  <Link href = "/test/team/create">
+                     Join team
+                  </Link>
                </div>
             )}
          </section>

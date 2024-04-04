@@ -42,7 +42,7 @@ export async function POST(request: Request) {
             },
         });
 
-        return NextResponse.json({ message: "Team created successfully" }, { status: 200 });
+        return NextResponse.json({ message: "Team created successfully", code: inviteCode }, { status: 200 });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ message: "An error occurred" }, { status: 500 });
