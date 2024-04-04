@@ -22,6 +22,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.4",
+    "react-toastify": "^10.0.5",
     "read-excel-file": "^5.7.1",
     "uuid": "^9.0.1"
   },
