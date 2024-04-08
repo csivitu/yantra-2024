@@ -1,67 +1,47 @@
 "use client"
-import React, { useEffect} from 'react';
-interface animationProps{
-rowNumber:number,
-}
-const characters = ':/::::// //*/**::/:: ::// //*/**::/: :: :// //*/**::/::::/ // /*/**::/::::////*/**::/::: :// //*/**::/::::////*/**::/::::// // */**: :/:: ::// //* /**::/ :: : :/ / //*/**::/::::////*/**::/: :: : /// /* /**:: /:: ::////*/* *::/:: ::// //*/**::/: : ::// //*/**:';
-function displacement(n:number,colNumber:number){
-    return n+Math.sin(colNumber*180/Math.PI)
-}
-function checkExistence(colNumber:number){
-    if(colNumber>displacement(10,colNumber) && colNumber<displacement(25,colNumber)) return 1
-    if(colNumber>displacement(35,colNumber) && colNumber<displacement(55,colNumber)) return 1
-    if(colNumber>displacement(75,colNumber) && colNumber<displacement(90,colNumber)) return 1
-    return  Math.sin(colNumber*Math.random()*180/Math.PI);
-}
-function generateString(numChars: number): string { 
-    let result = '';
-    for (let i = 0; i < numChars; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      result += characters[randomIndex];
-    }
-    return result;}
+import React, { useEffect } from 'react';
 
-const MyComponent:React.FunctionComponent<animationProps> = ({rowNumber}) => {
-  const [generatedString, setGeneratedString] = React.useState('');
+interface AnimationProps {
+  rowNumber: number
+}
+
+const luminanceRating = '``..--\'\'::__,^=;;>><<+!rc*/z?sLv)J7(|FiCfI31tluneoxjyawk694pGUKH8D$gMW%@';
+
+function generateString(desiredLuminance: number, numChars: number): string {
+  const len = luminanceRating.length;
+  const step = Math.floor(len / 12);
+  const baseStart = step * (desiredLuminance - 1);
+  const baseEnd = baseStart + step;
+
+  let result = '';
+  for (let i = 0; i < numChars; i++) {
+    const start = baseStart + Math.floor(Math.random() * step / 2);
+    const end = baseEnd + Math.floor(Math.random() * step / 2);
+    const randomIndex = Math.floor(Math.random() * (end - start + 1)) + start;
+    result += luminanceRating[randomIndex];
+  }
+
+  return result;
+}
+
+const AnimationHero = (props: AnimationProps) => {
+  const [line, setLine] = React.useState('');
   useEffect(() => {
-    const interval:NodeJS.Timeout = setInterval(() => {
-      const newString = generateString(90); 
-      setGeneratedString(newString);
-    }, 100);
+    const interval = setInterval(() => {
+      const newString = generateString(props.rowNumber, 600);
+      setLine(newString);
+    }, 40);
 
     return () => {
       clearInterval(interval);
     };
   }, []);
 
-  return <div className='text-white w-full flex justify-between '>
-    {generatedString.split('').map((s:string,index:number)=>{
-        // console.log(rowNumber*Math.random()/12)
-        if(rowNumber<9){
-            //console.log(checkExistence(index))
-            if(checkExistence(index)>0){
-                if(Math.random()>0.85){
-                   return (
-                    <span className='text-[#0281F0]' key={index}>
-                        {s}
-                    </span>
-                   )
-                }
-                return (
-                    <span key={index}>
-                                {` `}
-                    </span>
-                )
-            }
-        }
-        
-        return (
-            <span className='opacity-[70%] text-[#0281F0]' key={index}>
-                {s}
-            </span>
-        )
-    })}
-  </div>;
+  return (
+    <div className='w-full flex justify-between text-[#0281F0] opacity-50 whitespace-nowrap font-mono'>
+      {line}
+    </div>
+  )
 };
 
-export default MyComponent;
+export default AnimationHero;

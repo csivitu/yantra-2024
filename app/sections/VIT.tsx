@@ -1,6 +1,6 @@
 export default function VIT() {
   return (
-    <main className="w-full flex justify-around items-start laptop:min-h-[80vh] laptop:flex-row mobile:flex-col mobile:px-[1rem]">
+    <main id = "VIT" className="w-full flex justify-around items-start laptop:min-h-[80vh] laptop:flex-row mobile:flex-col mobile:px-[1rem]">
       <section className="flex flex-col laptop:w-[49%] gap-[12px] laptop:h-full mobile:w-full mobile:px-[1rem]">
         <div className="font-ptMono text-white text-5xl border-[1px] border-[#292929] rounded-[20px] px-[28px] py-[28px] text-center ">
           ABOUT VIT?

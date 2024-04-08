@@ -1,12 +1,12 @@
 import React from "react";
-import Footer from "../sections/Footer";
-import Timeline from "../sections/Timeline";
-import Navbar from "../components/Navbar";
-import Tracks from "../sections/Tracks";
-import AboutHack from "../sections/AboutHack";
-import FAQ from "../sections/FAQ";
-import MainHackHero from "../sections/MainHackHero";
-import PrizePool from "../sections/Prizepool";
+import Timeline from "@/app/sections/Timeline";
+import Navbar from "@/app/components/Navbar";
+import Tracks from "@/app/sections/Tracks";
+import AboutHack from "@/app/sections/AboutHack";
+import FAQ from "@/app//sections/FAQ";
+import MainHackHero from "@/app/sections/MainHackHero";
+import PrizePool from "@/app/sections/Prizepool";
+import Footer from "@/app/sections/Footer";
 
 const page = () => {
   return (

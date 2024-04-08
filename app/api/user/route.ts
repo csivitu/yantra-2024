@@ -5,7 +5,7 @@ import prisma from "@/lib/prisma";
 
 export async function PUT(request: Request) {
     try {
-        const { githubProfile, linkedinProfile, projects, bio } = await request.json();
+        const { githubProfile, linkedinProfile, projects, bio, otherProfile } = await request.json();
         const session = await getServerSession(authOptions);
 
         if (!session || !session.user || !session.user.name || !session.user.email) {
@@ -26,7 +26,8 @@ export async function PUT(request: Request) {
                 githubProfile: githubProfile,
                 linkedinProfile: linkedinProfile,
                 projects: projects,
-                bio: bio
+                bio: bio,
+                otherProfile: otherProfile
             },
         })
 

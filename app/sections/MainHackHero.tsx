@@ -1,11 +1,29 @@
-import React from "react";
+'use client'
+
+import React, { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
+import { getSession, signIn } from "next-auth/react"; // Import the signIn function from NextAuth for authentication.
 
 type MainHackHeroProps = {};
 
 const MainHackHero: React.FC<MainHackHeroProps> = () => {
+
+  const [signedIn, setSignedIn] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const session = await getSession();
+      if (session) {
+        setSignedIn(true);
+      }
+    }
+    fetchData()
+  }, [])
+
+  const callbackUrl = "/test/profile";
+
   return (
     <div className="flex flex-col justify-center items-center gap-[1.5rem] px-[3rem] bg-herohack-background w-full font-schabo">
       <Navbar />
@@ -28,17 +46,18 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
             />
           </div>
           <div>
-            <Link href="#">
-              <button className="flex flex-row gap-4 justify-center items-center font-ptMono p-3 font-light m-3 text-2xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out">
-                KNOW MORE
-                <Image
-                  src="/icons/arrow.svg"
-                  alt="Icon"
-                  width={20}
-                  height={20}
-                />
+            {!signedIn ? (
+              <button onClick={() =>
+                signIn("google", { callbackUrl })
+              } className="flex flex-row gap-4 justify-center items-center font-ptMono p-3 font-light m-3 text-2xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out">
+                Register now
               </button>
-            </Link>
+            ) : (
+              <Link href = "/test/dashboard" className="flex flex-row gap-4 justify-center items-center font-ptMono p-3 font-light m-3 text-2xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out">
+                Go to dashboard
+              </Link>
+            )
+            }
           </div>
         </div>
         <div className="bg-[#090909] w-full flex mobile:flex-col laptop:flex-row justify-between items-center mobile:py-[1rem] gap-6 laptop:py-4 px-[6rem]">
