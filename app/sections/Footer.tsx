@@ -2,14 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <footer className="w-full flex mobile:px-[1rem] laptop:px-[3rem] gap-[1rem] justify-between laptop:h-[524px] overflow-y-hidden mobile:flex-col laptop:flex-row">
-      <section className="flex flex-col  justify-between mobile:gap-[1rem] laptop:gap-[0rem]">
+    <footer className="w-full flex mobile:px-[1rem] laptop:px-[3rem] gap-[1rem] justify-between laptop:h-[324px] overflow-y-hidden mobile:flex-col laptop:flex-row">
+      <section className="flex flex-col  justify-between mobile:gap-[1rem] laptop:gap-[1rem]">
         <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-full px-[28px] py-[28px] text-center ">
           MENU
         </div>
         <div className="px-[3rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center  ">
           <Link href = "#home" className="w-full">Home</Link>
           <Link href="#yantra" className="w-full whitespace-nowrap">About Us</Link>
+          <Link href="#tracks" className="w-full whitespace-nowrap">Tracks</Link>
+          <Link href="#guidelines" className="w-full whitespace-nowrap">Guidelines</Link>
           {/* <div className="w-full">Team</div>
           <div className="w-full whitespace-nowrap">Main Hack</div> */}
         </div>
@@ -19,8 +21,8 @@ export default function Footer() {
           <Image
             alt="Yantra Logo"
             src={"/hero/mainLogo.svg"}
-            width={550}
-            height={550}
+            width={200}
+            height={200}
             className="absolute top-[50%] translate-y-[-45%] translate-x-[-50%] left-[50%]"
           />
         </div>
@@ -35,7 +37,7 @@ export default function Footer() {
           </div>
         </div>
       </section>
-      <section className="flex flex-col  justify-between mobile:gap-[1rem] laptop:gap-[0rem]">
+      <section className="flex flex-col  justify-between mobile:gap-[1rem] laptop:gap-[1rem]">
         <div className="font-ptMono text-white text-2xl border-[1px] border-[#292929] rounded-full px-[28px] py-[28px] text-center ">
           LINKS
         </div>
@@ -73,7 +75,7 @@ export default function Footer() {
             />
           </Link>
 
-          <Link href="https://www.instagram.com/sw_vit/" 
+          {/* <Link href="https://www.instagram.com/sw_vit/" 
             className="flex w-full flex-row justify-around items-center gap-[1rem] transition-colors duration-200 hover:text-purple-500">
             <p>Instagram</p>
             <Image
@@ -82,7 +84,7 @@ export default function Footer() {
               src={"/icons/Brands/Vector.svg"}
               alt="Instagram"
             />
-          </Link>
+          </Link> */}
         </div>
       </section>
     </footer>

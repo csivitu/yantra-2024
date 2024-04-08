@@ -9,7 +9,7 @@ const AboutHack: React.FC<AboutHackProps> = () => {
   // Forgive me Tailwind for I have sinned
 
   return (
-    <div className="flex flex-col justify-center items-center gap-[1.5rem] px-[3rem] w-full">
+    <div className="flex flex-col justify-center items-center gap-[1.5rem] px-[2rem] w-full">
       <div className="text-center tab:text-left leading-none font-ptMono text-[#eaeaea] mobile:text-4xl laptop:text-6xl border border-[#292929] w-full pb-4 pt-3 tab:pl-6 rounded-[20px]">
         ABOUT HACKATHON
       </div>

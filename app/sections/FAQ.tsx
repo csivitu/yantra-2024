@@ -53,7 +53,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-[1.5rem] px-[3rem]  w-full  font-aeonik">
+    <div id="guidelines" className="flex flex-col justify-center items-center gap-[1.5rem] px-[3rem]  w-full  font-aeonik">
       {/* <Image
         src="/backgrounds/Mathematics.svg"
         alt="Your Image"

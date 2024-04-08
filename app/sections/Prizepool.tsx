@@ -5,7 +5,7 @@ type PrizePoolProps = {};
 
 const PrizePool: React.FC<PrizePoolProps> = () => {
   return (
-    <div className="w-full bg-prizedots">
+    <div className="w-full bg-prizedots" id="#prizepool">
       <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-b from-transparent to-green-500 ">
         <div className=" text-white font-aeonik mobile:text-lg laptop:text-2xl  bg-gradient-to-b from-green-500 to-green-600 rounded-full mobile:p-4 laptop:p-6 mobile:px-[3rem] laptop:px-[3rem] border border-white mt-[4rem] m-[2rem]">
           PRIZE POOL
