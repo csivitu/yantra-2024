@@ -22,7 +22,7 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
     fetchData()
   }, [])
 
-  const callbackUrl = "/profile";
+  const callbackUrl = "https://yantra.vit.ac.in/profile";
 
   return (
     <div className="flex flex-col justify-center py-[0.5rem] items-center gap-[1.5rem] px-[3rem]  w-full font-schabo relative overflow-hidden">
