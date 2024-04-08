@@ -57,7 +57,7 @@ export default function ProfilePage() {
                 otherProfile
             });
             toast.success(response.data.message)
-            router.push('/test/team')
+            router.push('/team')
         } catch (e) {
             console.log(e);
         }

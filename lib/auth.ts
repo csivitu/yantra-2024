@@ -13,7 +13,7 @@ type Account = {
 
 export const authOptions: NextAuthOptions = {
 	pages: {
-		signIn: "/test/profile",
+		signIn: "/profile",
 	},
 	session: {
 		strategy: "jwt",

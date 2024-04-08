@@ -53,10 +53,10 @@ export default function TeamPage() {
                </div>
             ) : (
                <div>
-                  <Link href = "/test/team/create">
+                  <Link href = "/team/create">
                      Create team
                   </Link>
-                  <Link href = "/test/team/create">
+                  <Link href = "/team/create">
                      Join team
                   </Link>
                </div>

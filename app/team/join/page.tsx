@@ -15,7 +15,7 @@ export default function Form() {
                 teamCode
             })
             console.log(response.data)
-            router.push('/test/dashboard')
+            router.push('/dashboard')
         } catch (error) {
             console.log(error)
         }

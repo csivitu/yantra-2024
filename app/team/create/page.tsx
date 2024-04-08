@@ -42,7 +42,7 @@ export default function CreateTeam() {
         try {
             const response = await axios.post('/api/team', { teamName, description });
             setTeamCode(response.data.code)
-            router.push('/test/dashboard')
+            router.push('/dashboard')
             console.log(response)
         } catch (error) {
             console.log(error)
@@ -74,7 +74,7 @@ export default function CreateTeam() {
                     </div>
                 )}
             </section>
-            <Link href = "/test/dashboard">
+            <Link href = "/dashboard">
                 Go to dashboard
             </Link>
         </main>

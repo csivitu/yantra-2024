@@ -1,22 +1,26 @@
-import Hero from "./sections/Hero";
-import Yantra from "./sections/Yantra";
-import VIT from "./sections/VIT";
-import Organisers from "./sections/Organisers";
-import Patrons from "./sections/Patrons";
-import Timeline from "./sections/Timeline";
-import Footer from "./sections/Footer";
-export default function Home() {
+import React from "react";
+import Timeline from "@/app/sections/Timeline";
+import Navbar from "@/app/components/Navbar";
+import Tracks from "@/app/sections/Tracks";
+import AboutHack from "@/app/sections/AboutHack";
+import FAQ from "@/app//sections/FAQ";
+import MainHackHero from "@/app/sections/MainHackHero";
+import PrizePool from "@/app/sections/Prizepool";
+import Footer from "@/app/sections/Footer";
+
+const page = () => {
   return (
-  <main className="w-full gap-[4rem] flex flex-col py-[1rem] font-schabo bg-black">
-     <Hero/> 
-    <Yantra/>
-    <VIT/>
-    {/* <Timeline/> */}
-    {/* <Organisers/> */}
-    <Patrons/>
-    <Footer/>
-  </main>
+    <main className="w-full gap-[4rem] flex flex-col py-[1rem] font-schabo bg-black">
+      <MainHackHero />
+      <AboutHack />
+      {/* <Timeline /> */}
+      {/* Try this with gridOption = 3 and gridOption = 4. 3 looks better imo */}
+      <Tracks gridOption={4} />
+      <PrizePool />
+      <FAQ />
+      <Footer />
+    </main>
   );
-}
+};
 
-
+export default page;
