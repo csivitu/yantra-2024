@@ -22,7 +22,7 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
     fetchData()
   }, [])
 
-  const callbackUrl = "/test/profile";
+  const callbackUrl = "/profile";
 
   return (
     <div className="flex flex-col justify-center py-[0.5rem] items-center gap-[1.5rem] px-[3rem]  w-full font-schabo relative overflow-hidden">
@@ -56,7 +56,7 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
                 Register now
               </button>
             ) : (
-              <Link href = "/test/dashboard" className="flex flex-row gap-4 justify-center items-center font-ptMono p-3 font-light m-3 text-2xl rounded-lg text-white bg-blue-400 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-110 ease-in-out">
+              <Link href = "/dashboard" className="flex flex-row gap-4 justify-center items-center font-ptMono p-3 font-light m-3 text-2xl rounded-lg text-white bg-blue-400 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-110 ease-in-out">
                 Go to dashboard
               </Link>
             )
