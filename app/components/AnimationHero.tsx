@@ -38,7 +38,7 @@ const AnimationHero = (props: AnimationProps) => {
   }, []);
 
   return (
-    <div className='w-full flex justify-between text-[#0281F0] opacity-50 whitespace-nowrap font-mono'>
+    <div className='w-full flex justify-between text-[#0281F0] opacity-50 whitespace-nowrap font-mono '>
       {line}
     </div>
   )

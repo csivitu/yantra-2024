@@ -32,7 +32,7 @@ const EventsPage = () => {
   }
 
   return (
-    <main className="w-full bg-black flex flex-col justify-around items-center gap-[2rem]  px-[2rem] py-[2rem]">
+    <main className="w-full bg-black flex flex-col justify-between items-center gap-[2rem]  px-[2rem] py-[2rem] min-h-screen">
       <Navbar/>
      <div className="w-full flex latop:flex-row mobile:flex-col justify-between laptop:items-center mobile:gap-[1rem]">
      <h1 className="text-white font-ptMono text-5xl">Events</h1>

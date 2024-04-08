@@ -63,29 +63,41 @@ export default function Dashboard() {
     };
 
     return (
-        <main>
-            {sessionUser && <h1>Welcome {sessionUser.name}</h1>}
-            <h2>Team</h2>
-            {team && <h3>{team.teamName} and {team.teamCode}</h3>}
-            <h2>Profile</h2>
-            {user && <p>{user.linkedinProfile}</p>}
-            {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>}
-            <h2>Idea Data</h2>
-            <form onSubmit={handleFormSubmit}>
-                <label>
+        <main className="bg-black min-h-screen text-white">
+            {/* {sessionUser && <h1>Welcome {sessionUser.name}</h1>} */}
+            <h2 className="w-full text-6xl font-ptMono text-center">Dashboard</h2>
+            {/* {team && <h3>{team.teamName} and {team.teamCode}</h3>} */}
+            <h2 className="w-full text-3xl font-ptMono">Profile</h2>
+            {/* {user && <p>{user.linkedinProfile}</p>} */}
+            {/* {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>} */}
+            
+            {user && (
+                <div className="flex flex-col gap-[1rem] justify-center items-center">
+                    
+                </div>
+            )}
+           <div className="flex flex-col gap-[1rem] justify-center items-center">
+           <h2 className="w-full text-3xl font-ptMono">Idea Submission</h2>
+           <form onSubmit={handleFormSubmit} className="w-full flex justify-center items-center gap-[2rem] ">
+                <label className="flex flex-col gap-[1rem] justify-center items-center ">
                     Idea Description:
-                    <input type="text" name="ideaDescription" value={ideaData.ideaDescription} onChange={handleIdeaDataChange} required />
+                    <input type="text" name="ideaDescription" value={ideaData.ideaDescription} onChange={handleIdeaDataChange} required   className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-[0.5rem] text-xl"
+/>
                 </label>
-                <label>
+                <label className="flex flex-col gap-[1rem] justify-center items-center ">
                     Idea Link:
-                    <input type="text" name="ideaLink" value={ideaData.ideaLink} onChange={handleIdeaDataChange} required />
+                    <input type="text" name="ideaLink" value={ideaData.ideaLink} onChange={handleIdeaDataChange} required   className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-[0.5rem] text-xl"
+/>
                 </label>
-                <label>
+                <label className="flex flex-col gap-[1rem] justify-center items-center ">
                     Track:
-                    <input type="text" name="track" value={ideaData.track} onChange={handleIdeaDataChange} required />
+                    <input type="text" name="track" value={ideaData.track} onChange={handleIdeaDataChange} required   className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-[0.5rem] text-xl"
+ />
                 </label>
-                <button type="submit">Submit</button>
             </form>
+            <button type="submit" className="flex flex-row gap-4 justify-center items-center font-ptMono p-3 font-light  text-xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out">Submit</button>
+
+           </div>
         </main>
     )
 }
