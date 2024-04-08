@@ -7,7 +7,7 @@ import axios from 'axios';
 import { Team } from "@/types/team";
 import Link from "next/link";
 import { toast } from "react-toastify";
-
+// import Image from "next/image";
 export default function Dashboard() {
 
     const [sessionUser, setSessionUser] = useState<UserSession | null>(null)
@@ -71,9 +71,15 @@ export default function Dashboard() {
             {/* {user && <p>{user.linkedinProfile}</p>} */}
             {/* {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>} */}
             
-            {user && (
-                <div className="flex flex-col gap-[1rem] justify-center items-center">
-                    
+            {true && (
+                <div className="flex flex-col gap-[1rem] justify-center items-start w-full">
+                    <p className="font-bold text-xl">Name: <span className="font-normal">Manas</span></p>
+                    <p className="font-bold text-xl">Email: <span className="font-normal">manaslaud2004@gmail.com</span></p>
+                    <p className="font-bold text-xl w-[75%]">About me: <span className="font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur quibusdam molestiae aliquam totam corporis, suscipit numquam aperiam quidem dolore sapiente quas vitae. Praesentium excepturi omnis minima? Labore iusto deserunt natus.</span></p>
+                    {/* user Github && */}
+                    <div className="w-full flex flex-col gap-[1rem]">
+                    <p className="font-bold text-xl w-[75%]">Github: <span className="font-normal">manaslaud</span></p>
+                    </div>
                 </div>
             )}
            <div className="flex flex-col gap-[1rem] justify-center items-center">
