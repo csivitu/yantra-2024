@@ -44,43 +44,42 @@ export default function TeamPage() {
       }
    };
    return (
-      <main className = "bg-black h-screen text-white flex flex-col  md:flex-row justify-center items-center">
-         <h1 className = "absolute top-[0%] left-[50%] translate-x-[-50%] font-mono text-6xl">Team</h1>
-        
+      <main className="bg-black h-screen text-white flex flex-col  md:flex-row justify-center items-center">
+         <h1 className="absolute top-[0%] left-[50%] translate-x-[-50%] font-mono text-6xl">Team</h1>
+
          <section>
             {team ? (
-               <div>
-                  <h1>Team</h1>
-                  {team.teamName} {team.teamCode}
+               <div className = "flex mr-6 text-2xl">
+                  {/* <h1>Team</h1> */}
+                  <div>
+                  <p>
+                  Team:     {team.teamName}
+                  </p>
+                  <p> Team Code: {team.teamCode}</p>
+
+                  </div>
+                 
+                   
                </div>
             ) : (
-               <div className = "border-black border-2 w-[50%]  h-[30%]">
-                 <div className = "bg-blue-500 w-fit px-8 flex justify-center py-4  rounded-md mb-4   ">
-                  <Link href = "/team/create">
+               <div className="border-black border-2 w-[50%]  h-[30%]">
+                  <Link href="/team/create" className="bg-blue-500 w-fit px-8 flex justify-center py-4  rounded-md mb-4">
                      Create Team
                   </Link>
 
-                 </div>
-
-                  
-                 <div className = "bg-blue-500 px-10 py-4 w-fit flex justify-center rounded-md">
-                  <Link href = "/team/create">
+                  <Link href="/team/join" className="bg-blue-500 px-10 py-4 w-fit flex justify-center rounded-md">
                      Join Team
                   </Link>
-
-                 </div>
-
-                 
                </div>
             )}
          </section>
-         <section className = "mr-2">
+         {/* <section className="mr-2">
             {sessionUser && (
                <div>
-                  {sessionUser.email}
+                  Email: {sessionUser.email}
                </div>
             )}
-         </section>
+         </section> */}
       </main>
    )
 }

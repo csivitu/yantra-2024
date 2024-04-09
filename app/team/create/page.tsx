@@ -42,7 +42,6 @@ export default function CreateTeam() {
         try {
             const response = await axios.post('/api/team', { teamName, description });
             setTeamCode(response.data.code)
-            router.push('/dashboard')
             console.log(response)
         } catch (error) {
             console.log(error)

@@ -111,7 +111,7 @@ export async function PUT(request: Request) {
 
         const teamMembersCount = team.users.length;
 
-        if (teamMembersCount >= 4) {
+        if (teamMembersCount >= 5) {
             return NextResponse.json({ message: "Team full" }, { status: 400 });
         }
 
