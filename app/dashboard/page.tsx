@@ -166,7 +166,7 @@ export default function Dashboard() {
                         {/* <input type="text" name="track" value={ideaData.track} onChange={handleIdeaDataChange} required className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
                         /> */}
                         <select name="" id="" className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl">
-                            <option value="Manas">Manas</option>
+                            <option value="Manas">Masfdasd</option>
                             <option value="Manas">Manas</option>
                             <option value="Manas">Manas</option>
                             <option value="Manas">Manas</option>
