@@ -34,7 +34,7 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
           <div className="flex flex-row bg-gradient-to-t from-[#3a9bdce9] via-[#1d90d298] to-[#59b4e85b] p-2 px-[1rem] font-aeonik rounded-full justify-center items-center">
             <div className="w-[10px] h-[10px] rounded-full mx-4 bg-[#8af3ffb0] shadow-xl shadow-cyan-400 "></div>
             <p className="text-white font-light mobile:sm laptop:text-normal text-center">
-              A sustainable Development Hackathon
+              A Sustainable Development Hackathon
             </p>
             <div className="w-[10px] h-[10px] rounded-full mx-4 bg-[#8af3ffb0] shadow-xl shadow-cyan-400 "></div>
           </div>

@@ -13,22 +13,14 @@ export default function Navbar() {
           height={130}
           className="mobile:w-[40%] laptop:w-[15%]"
         />
-      </Link>event
+      </Link>
       <div className=" laptop:w-[53%]  justify-around items-center text-white font-ptMono font-light laptop:flex mobile:hidden">
         <SmoothScroll target="#about" route="/">
           About us
         </SmoothScroll>
-        <Link href={'/event'}>
-          <p>Events</p>
-        </Link>
-        <Link href={"/event"}>
-        <p>Events</p>
-
-        </Link>
-        <Link href={'/#patrons'}>
-        <p>Team</p>
-        </Link>
-        
+        {/* <Link href={"/#patrons"}>
+          <p>Team</p>
+        </Link> */}
         {/* <p>Sponsors</p> */}
         <Link href="/#contactus">
           {" "}
