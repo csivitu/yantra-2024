@@ -77,23 +77,23 @@ export default function ProfilePage() {
                 <form onSubmit={handleSubmit} className='mt-4 flex flex-col gap-4'>
                     <label className='flex w-full md:w-[60vw] flex-col md:flex-row'>
                         <div className="w-full md:w-[30%]">Github Profile:</div>
-                        <input type="text" value={githubProfile} onChange={(e) => setGithubProfile(e.target.value)} className='rounded-lg p-1'/>
+                        <input type="text" value={githubProfile} onChange={(e) => setGithubProfile(e.target.value)} className='rounded-lg p-1 text-black'/>
                     </label>
                     <label className='flex w-full md:w-[60vw] flex-col md:flex-row'>
                         <div className="w-full md:w-[30%]">LinkedIn Profile:</div>
-                        <input type="text" value={linkedinProfile} onChange={(e) => setLinkedinProfile(e.target.value)} className='rounded-lg p-1'/>
+                        <input type="text" value={linkedinProfile} onChange={(e) => setLinkedinProfile(e.target.value)} className='rounded-lg p-1 text-black'/>
                     </label>
                     <label className='flex w-full md:w-[60vw] flex-col md:flex-row'>
                         <div className="w-full md:w-[30%]">Other Profile:</div>
-                        <input type="text" value={otherProfile} onChange={(e) => setOtherProfile(e.target.value)} className='rounded-lg p-1'/>
+                        <input type="text" value={otherProfile} onChange={(e) => setOtherProfile(e.target.value)} className='rounded-lg p-1 text-black'/>
                     </label>
                     <label className='flex w-full md:w-[60vw] flex-col md:flex-row'>
                         <div className="w-full md:w-[30%]">Projects:</div>
-                        <input type="text" value={projects} onChange={(e) => setProjects(e.target.value)} className='rounded-lg p-1'/>
+                        <input type="text" value={projects} onChange={(e) => setProjects(e.target.value)} className='rounded-lg p-1 text-black'/>
                     </label>
                     <label className='flex w-full md:w-[60vw] flex-col md:flex-row'>
                         <div className="w-full md:w-[30%]">Bio:</div>
-                        <textarea value={bio} onChange={(e) => setBio(e.target.value)} className='rounded-lg p-1'/>
+                        <textarea value={bio} onChange={(e) => setBio(e.target.value)} className='rounded-lg p-1 text-black'/>
                     </label>
                     <button type="submit" className='bg-[#aeaeae] px-4 py-2 rounded-lg mx-auto w-fit'>Complete Profile</button>
                 </form>

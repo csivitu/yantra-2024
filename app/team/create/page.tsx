@@ -49,32 +49,34 @@ export default function CreateTeam() {
         }
     };
     return (
-        <main>
-            <section>
+        <main  className='font-ptMono bg-black min-h-screen w-full text-white p-8'>
+                    <h1 className='text-4xl font-medium'>Create Your Team</h1>
+            <section className='mb-6 border-2 border-white p-4 rounded-xl mt-8'>
                 <div>
-                    <form onSubmit={handleSubmit}>
-                        <label>
-                            Team Name:
-                            <input type="text" value={teamName} onChange={(e) => setTeamName(e.target.value)} />
+                    <form onSubmit={handleSubmit} className='flex flex-col gap-2 mt-4'>
+                        <label className='flex w-full flex-col md:flex-row md:w-[50vw] items-center'>
+                            <p className='w-full md:w-[30%]'>Team Name:</p>
+                            <input type="text" value={teamName} onChange={(e) => setTeamName(e.target.value)} className='rounded-lg p-1 w-full text-black'/>
                         </label>
-                        <label>
-                            Description:
-                            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
+                        <label className='flex w-full flex-col md:flex-row md:w-[50vw] items-center'>
+                            <p className='w-full md:w-[30%]'>Description:</p>
+                            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} className='rounded-lg p-1 w-full text-black'/>
                         </label>
-                        <button type="submit">Create Team</button>
+                        <button type="submit" className='bg-[#aeaeae] px-4 py-2 w-fit rounded-md'>Create Team</button>
                     </form>
-                    {teamCode && <p>{teamCode}</p>}
+                    <div className="flex gap-4 mt-4"><p className='text-xl font-medium'>Your Team Code: </p>
+                    {!teamCode && <p className='text-[#60b86b] font-bold text-xl'>{teamCode}</p>}</div>
                 </div>
 
             </section>
-            <section>
+            {/* <section>
                 {sessionUser && (
                     <div>
                         {sessionUser.email}
                     </div>
                 )}
-            </section>
-            <Link href = "/dashboard">
+            </section> */}
+            <Link href = "/dashboard" className='bg-[#60b86b] px-6 py-2 rounded-lg'>
                 Go to dashboard
             </Link>
         </main>
