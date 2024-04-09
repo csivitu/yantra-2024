@@ -8,7 +8,7 @@ import prisma from "@/lib/prisma";
 export async function POST(request: Request) {
     try {
         const inviteCode = generateInviteCode();
-        const { teamName, description } = await request.json();
+        const { teamName } = await request.json();
         const session = await getServerSession(authOptions);
 
         if (!session || !session.user || !session.user.name || !session.user.email) {
@@ -30,7 +30,6 @@ export async function POST(request: Request) {
         const team = await prisma.team.create({
             data: {
                 teamName: teamName,
-                description: description,
                 teamCode: inviteCode,
                 createdBy: { connect: { email: session.user.email } },
             },
@@ -111,7 +110,7 @@ export async function PUT(request: Request) {
 
         const teamMembersCount = team.users.length;
 
-        if (teamMembersCount >= 4) {
+        if (teamMembersCount >= 5) {
             return NextResponse.json({ message: "Team full" }, { status: 400 });
         }
 

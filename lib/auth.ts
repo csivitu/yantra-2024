@@ -28,14 +28,20 @@ export const authOptions: NextAuthOptions = {
 			account: Account | null;
 			profile?: Profile;
 		}) {
-			if (account && account.provider === "google" && profile?.email) {
-				const result: string | boolean =
-					profile.email.endsWith("@vitstudent.ac.in");
-				return Promise.resolve(result);
+			try {
+				if (account && account.provider === "google" && profile?.email) {
+					const result: string | boolean =
+						profile.email.endsWith("@vitstudent.ac.in");
+					return Promise.resolve(result);
+				}
+				return Promise.resolve(false);
+			} catch (error) {
+				console.error(error)
+				return Promise.resolve(false)
 			}
-			return Promise.resolve(false);
 		},
 		session: async ({ session }) => {
+			try{
 			if (!session.user || !session.user.email) {
 				throw new Error("No user found")
 			}
@@ -50,6 +56,10 @@ export const authOptions: NextAuthOptions = {
 				...session
 			}
 			return Promise.resolve(sessionData);
+		}catch(error){
+			console.error(error)
+			throw new Error("No user found")
+		}
 		}
 	},
 
