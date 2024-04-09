@@ -26,6 +26,7 @@ model User {
   otherProfile    String    @default("") @map("other_profile")
   projects        String    @default("") @map("projects")
   bio             String    @default("") @map("bio")
+  phoneNum        String    @default("") @map("phone_num")
   teamId          String?
   team            Team?     @relation("UserToTeam", fields: [teamId], references: [id])
   createdTeams    Team[]    @relation("TeamCreatedByUser")

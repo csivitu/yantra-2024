@@ -16,7 +16,6 @@ export default function CreateTeam() {
     const [sessionUser, setSessionUser] = useState<UserSession | null>(null)
     const [team, setTeam] = useState<Team | null>(null)
     const [teamName, setTeamName] = useState('');
-    const [description, setDescription] = useState('');
     const [teamCode, setTeamCode] = useState<string | null>(null);
 
     useEffect(() => {
@@ -41,7 +40,7 @@ export default function CreateTeam() {
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         try {
-            const response = await axios.post('/api/team', { teamName, description });
+            const response = await axios.post('/api/team', { teamName });
             setTeamCode(response.data.code)
             toast.success(response.data.message)
             console.log(response)
@@ -59,11 +58,8 @@ export default function CreateTeam() {
                             <p className='w-full md:w-[30%]'>Team Name:</p>
                             <input type="text" value={teamName} onChange={(e) => setTeamName(e.target.value)} className='rounded-lg p-1 w-full text-black'/>
                         </label>
-                        <label className='flex w-full flex-col md:flex-row md:w-[50vw] items-center'>
-                            <p className='w-full md:w-[30%]'>Description:</p>
-                            <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} className='rounded-lg p-1 w-full text-black'/>
-                        </label>
-                        <button type="submit" className='bg-[#aeaeae] px-4 py-2 w-fit rounded-md'>Create Team</button>
+                       
+                        <button type="submit" className='bg-[#5cdb5c] px-4 py-2 w-fit rounded-md'>Create Team</button>
                     </form>
                     <div className="flex gap-4 mt-4"><p className='text-xl font-medium'>Your Team Code: </p>
                     {teamCode && <p className='text-[#60b86b] font-bold text-xl'>{teamCode}</p>}</div>

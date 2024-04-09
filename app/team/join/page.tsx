@@ -35,7 +35,7 @@ export default function Form() {
             value={teamCode}
             onChange={(e) => setTeamCode(e.target.value)}
         />
-        <button type="submit" className='bg-white text-black px-4 py-2 rounded-lg font-bold hover:bg-[#aeaeae] transition-all duration-200 ease-linear'>Join Team</button>
+        <button type="submit" className='bg-white text-black px-4 py-2 rounded-lg font-bold hover:bg-[#5cdb5c] transition-all duration-200 ease-linear'>Join Team</button>
     </form></main>
         
     );
