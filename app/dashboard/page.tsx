@@ -189,10 +189,12 @@ export default function Dashboard() {
               id=""
               className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
             >
-              <option value="Manas">Masfdasd</option>
-              <option value="Manas">Manas</option>
-              <option value="Manas">Manas</option>
-              <option value="Manas">Manas</option>
+              <option value="Manas">QUALITY EDUCATION</option>
+              <option value="Manas">REDUCED INEQUALITIES</option>
+              <option value="Manas">PARTNERSHIP FOR GOALS </option>
+              <option value="Manas">GENDER EQUALITY</option>
+              <option value="Manas">SUSTAINABLE CITIES COMMUNITIES</option>
+              <option value="Manas">DECENT WORK AND ECONOMIC GROWTH</option>
             </select>
           </label>
           <button
