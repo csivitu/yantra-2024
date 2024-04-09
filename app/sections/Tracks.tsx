@@ -17,7 +17,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
           gridOption == 3 ? `laptop:grid-cols-3` : `laptop:grid-cols-4`
         }`}
       >
-        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[50vh]">
+        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[35vh]">
           <div className="flex flex-col mobile:p-3 tab:py-1 tab:px-4 laptop:p-6 justify-between bg-white w-full h-full rounded-[20px]">
             <div className="w-full flex font-bold font-ptMono text-2xl py-2 ">
               <div className="flex justify-between w-full items-center">
@@ -44,7 +44,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
         </div>
 
         {/* Track 2 */}
-        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[50vh]">
+        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[35vh]">
           <div className="flex flex-col mobile:p-3 tab:px-4 laptop:p-6 justify-between bg-white w-full h-full rounded-[20px]">
             <div className="w-full flex font-bold font-ptMono text-2xl py-2 ">
               <div className="flex justify-between w-full items-center">
@@ -71,7 +71,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
         </div>
 
         {/* Track 3 */}
-        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[50vh]">
+        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[35vh]">
           <div className="flex flex-col mobile:p-3 tab:px-4 laptop:p-6 justify-between bg-white w-full h-full rounded-[20px]">
             <div className="w-full flex font-bold font-ptMono text-2xl py-2 ">
               <div className="flex justify-between w-full items-center">
@@ -97,7 +97,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
         </div>
 
         {/* Track 4 */}
-        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[50vh]">
+        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[35vh]">
           <div className="flex flex-col mobile:p-3 tab:px-4 laptop:p-6 justify-between bg-white w-full h-full rounded-[20px]">
             <div className="w-full flex font-bold font-ptMono text-2xl py-2 ">
               <div className="flex justify-between w-full items-center">
@@ -123,7 +123,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
         </div>
 
         {/* Track 5 */}
-        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[50vh]">
+        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[35vh]">
           <div className="flex flex-col mobile:p-3 tab:px-4 laptop:p-6 justify-between bg-white w-full h-full rounded-[20px]">
             <div className="w-full flex font-bold font-ptMono text-2xl py-2 ">
               <div className="flex justify-between w-full items-center">
@@ -149,7 +149,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
         </div>
 
         {/* Track 6 */}
-        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[50vh]">
+        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[35vh]">
           <div className="flex flex-col mobile:p-3 tab:px-4 laptop:p-6 justify-between bg-white w-full h-full rounded-[20px]">
             <div className="w-full flex font-bold font-ptMono text-2xl py-2 ">
               <div className="flex justify-between w-full items-center">
@@ -175,7 +175,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
         </div>
 
         {/* Track 7 */}
-        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[50vh]">
+        <div className="flex justify-center items-center p-4 border rounded-[20px] border-white mobile:h-[40vh] tab:h-[35vh] laptop:h-[35vh]">
           <div className="flex flex-col mobile:p-3 tab:px-4 laptop:p-6 justify-between bg-white w-full h-full rounded-[20px]">
             <div className="w-full flex font-bold font-ptMono text-2xl py-2 ">
               <div className="flex justify-between w-full items-center">

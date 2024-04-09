@@ -26,28 +26,30 @@ export default function Form() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="flex flex-col gap-2 mx-auto max-w-md mt-10">
+        <main className='bg-black min-h-screen w-full text-white flex'>
+            <form onSubmit={handleSubmit} className="flex flex-col gap-2 mx-auto max-w-md mt-10">
             <label htmlFor="teamName">Update Team Info</label>
             <label>Team Description</label>
             <input
                 name="description"
-                className="border border-black text-black"
+                className="border border-black border border-black  text-black px-4 py-2 rounded-lg"
                 type="text"
             />
             <label>Github Link</label>
             <input
                 name="gLink"
-                className="border border-black text-black"
+                className="border border-black border border-black  text-black px-4 py-2 rounded-lg"
                 type="text"
             />
             <label>Figma Link</label>
             <input
                 name="fLink"
-                className="border border-black text-black"
+                className="border border-black border border-black  text-black px-4 py-2 rounded-lg"
                 type="text"
             />
-            <button type="submit">Update</button>
+            <button type="submit" className='bg-white text-black px-4 py-2 rounded-lg font-bold hover:bg-[#5cdb5c] transition-all duration-200 ease-linear'>Update</button>
         </form>
+        </main>
     );
 }
 

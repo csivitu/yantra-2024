@@ -8,10 +8,10 @@ export default function Footer() {
           MENU
         </div>
         <div className="px-[3rem] font-ptMono text-opacity-60 flex flex-col h-[80%] justify-around text-white text-xl border-[1px] border-[#292929] rounded-[2rem]  py-[28px] text-center  ">
-          <Link href = "#home" className="w-full">Home</Link>
-          <Link href="#yantra" className="w-full whitespace-nowrap">About Us</Link>
-          <Link href="#tracks" className="w-full whitespace-nowrap">Tracks</Link>
-          <Link href="#guidelines" className="w-full whitespace-nowrap">Guidelines</Link>
+          <Link href = "#home" className="w-full transition-colors duration-200 hover:text-purple-500">Home</Link>
+          <Link href="#about" className="w-full whitespace-nowrap transition-colors duration-200 hover:text-purple-500">About Us</Link>
+          <Link href="#tracks" className="w-full whitespace-nowrap transition-colors duration-200 hover:text-purple-500">Tracks</Link>
+          <Link href="#guidelines" className="w-full whitespace-nowrap transition-colors duration-200 hover:text-purple-500">Guidelines</Link>
           {/* <div className="w-full">Team</div>
           <div className="w-full whitespace-nowrap">Main Hack</div> */}
         </div>

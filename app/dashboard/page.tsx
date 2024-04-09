@@ -63,11 +63,11 @@ export default function Dashboard() {
     };
 
     return (
-        <main className="bg-black min-h-screen w-full text-white flex flex-col justify-center items-center py-4">
+        <main className="bg-black min-h-screen w-full text-white flex flex-col justify-center items-center py-4 gap-[3rem]">
             {/* {sessionUser && <h1>Welcome {sessionUser.name}</h1>} */}
             <h2 className="w-full text-6xl font-ptMono text-center mt-8 md:mt-0">Dashboard</h2>
             {/* {team && <h3>{team.teamName} and {team.teamCode}</h3>} */}
-            <div className="w-full flex flex-col md:flex-row"><section className = "flex flex-col justify-center items-center w-[80%] mx-auto border-2 border-white rounded-lg p-4 scale-90">
+            <div className="w-full flex flex-col md:flex-row"><section className = "flex flex-col justify-start items-center w-[80%] mx-auto border-2 border-white rounded-lg p-4 scale-90">
                 <h2 className="w-full text-3xl font-ptMono">Profile</h2>
                 {/* {user && <p>{user.linkedinProfile}</p>} */}
                 {/* {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>} */}
@@ -93,7 +93,7 @@ export default function Dashboard() {
                 }
             </section> */}
             </section>
-            <section className = "flex flex-col justify-center items-center w-[80%] mx-auto border-2 border-white rounded-lg p-4 scale-90">
+            <section className = "flex flex-col justify-start items-center w-[80%] mx-auto border-2 border-white rounded-lg p-4 scale-90">
                 <h2 className="w-full text-3xl font-ptMono">Team Details</h2>
                 {/* {user && <p>{user.linkedinProfile}</p>} */}
                 {/* {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>} */}
@@ -120,7 +120,7 @@ export default function Dashboard() {
             </section></div>
             <div className="flex flex-col gap-[1rem] justify-center items-center">
                 <h2 className="w-full text-2xl mt-4 md:text-3xl font-ptMono text-center">Idea Submission</h2>
-                <form onSubmit={handleFormSubmit} className="w-full flex flex-col md:flex-row justify-center items-center gap-[2rem] ">
+                <form onSubmit={handleFormSubmit} className="w-full flex flex-col md:flex-row justify-center items-end gap-[2rem] ">
                     <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
                         Idea Description:
                         <input type="text" name="ideaDescription" value={ideaData.ideaDescription} onChange={handleIdeaDataChange} required className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"

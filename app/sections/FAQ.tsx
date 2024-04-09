@@ -3,9 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 
-// Do not do what I am about to do. I yearn for the sweet release of ShadCN UI
-// 3am Brain does not come up with any better ideas
-
 const FAQ = () => {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
@@ -70,7 +67,7 @@ const FAQ = () => {
 
         <div className="flex flex-col gap-8 w-full ">
           {/* Question 1 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
+          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out cursor-pointer" onClick={() => toggleQuestion(1)}>
             <div className="flex flex-row w-full justify-between">
               <div className="flex text-white text-large laptop:text-3xl gap-4 ">
                 <div className="flex rounded-[30px] border border-white px-2 items-center">
@@ -103,7 +100,7 @@ const FAQ = () => {
           </div>
 
           {/* Question 2 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
+          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out cursor-pointer" onClick={() => toggleQuestion(2)}>
             <div className="flex flex-row w-full justify-between">
               <div className="flex text-white text-large laptop:text-3xl gap-4 ">
                 <div className="flex rounded-[30px] border border-white px-2 items-center">
@@ -136,7 +133,7 @@ const FAQ = () => {
           </div>
 
           {/* Question 3 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
+          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out cursor-pointer" onClick={() => toggleQuestion(3)}>
             <div className="flex flex-row w-full justify-between">
               <div className="flex text-white text-large laptop:text-3xl gap-4 ">
                 <div className="flex rounded-[30px] border border-white px-2 items-center">
@@ -166,7 +163,7 @@ const FAQ = () => {
           </div>
 
           {/* Question 4 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
+          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out cursor-pointer" onClick={() => toggleQuestion(4)}>
             <div className="flex flex-row w-full justify-between">
               <div className="flex text-white text-large laptop:text-3xl gap-4 ">
                 <div className="flex rounded-[30px] border border-white px-2 items-center">
@@ -204,7 +201,7 @@ const FAQ = () => {
           </div>
 
           {/* Question 5 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
+          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out cursor-pointer" onClick={() => toggleQuestion(5)}>
             <div className="flex flex-row w-full justify-between">
               <div className="flex text-white text-large laptop:text-3xl gap-4 ">
                 <div className="flex rounded-[30px] border border-white px-2 items-center">
@@ -241,7 +238,7 @@ const FAQ = () => {
             </div>
           </div>
           {/* Question 6 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
+          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out cursor-pointer" onClick={() => toggleQuestion(9)}>
             <div className="flex flex-row w-full justify-between">
               <div className="flex text-white text-large laptop:text-3xl gap-4 ">
                 <div className="flex rounded-[30px] border border-white px-2 items-center">

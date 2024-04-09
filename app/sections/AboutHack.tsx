@@ -9,7 +9,7 @@ const AboutHack: React.FC<AboutHackProps> = () => {
   // Forgive me Tailwind for I have sinned
 
   return (
-    <div className="flex flex-col justify-center items-center gap-[1.5rem] px-[2rem] w-full">
+    <div className="flex flex-col justify-center items-center gap-[1.5rem] px-[2rem] w-full" id="about">
       <div className="text-center tab:text-left leading-none font-ptMono text-[#eaeaea] mobile:text-4xl laptop:text-6xl border border-[#292929] w-full pb-4 pt-3 tab:pl-6 rounded-[20px]">
         ABOUT HACKATHON
       </div>
@@ -27,15 +27,30 @@ const AboutHack: React.FC<AboutHackProps> = () => {
         <div className="mobile:hidden laptop:block laptop:w-[5%] h-full border border-[#292929] rounded-[80px] my-10 laptop:mr-10"></div>
         <div className="mobile:w-full laptop:w-[60%] h-full border border-[#292929] rounded-[60px] laptop:my-10 mr-10 text-white font-aeonik flex flex-col p-[2rem] font-normal justify-center">
           <h2 className="font-extrabold mobile:text-sm laptop:text-2xl">
-            WHAT IS SDG ?
+            WHAT IS YANTRA ?
           </h2>
           <p className=" font-normal mobile:text-sm laptop:text-xl py-4 text-white/70">
-          The 17 Sustainable Development Goals (SDGs) established by the United Nations encompass a range of economic, social, and environmental issues to be focused on until 2030. These goals, introduced in 2016, expand upon the earlier Millennium Development Goals, which were primarily targeted at developing countries. The SDGs are designed to address a wider array of topics and apply to all nations.
+          Yantra, VIT&apos;s prestigious student-led Technical
+                        festival, is presented by the Office of Student Welfare.
+                        It provides a unique opportunity for students to
+                        explore, learn, and flourish. With engaging talks,
+                        immersive workshops, and exhilarating hackathons, Yantra
+                        equips participants with the skills and resources to
+                        transform ideas into reality. It&apos;s a platform for
+                        personal growth and creative innovation. Join us for
+                        VIT&apos;s biggest student conference, where visionaries
+                        and professionals from diverse fields share expertise
+                        and experiences. Mark your calendars for an
+                        unforgettable experience at Yantra, the epitome of
+                        technical brilliance and personal development.
           </p>
         </div>
       </div>
       <div className="w-full laptop:h-[35vh] flex mobile:flex-col laptop:flex-row laptop:mt-10">
         <div className="mobile:w-full laptop:w-[60%] h-full border border-[#292929] rounded-[60px] my-10 laptop:ml-10 text-white font-aeonik flex flex-col p-[2rem] justify-center ">
+        <h2 className="font-extrabold mobile:text-sm laptop:text-2xl">
+            WHAT IS SDG ?
+          </h2>
           <p className="font-normal mobile:text-sm laptop:text-xl py-4 text-white/70">
             The United Nations' 17{" "}
             <span className="underline">
