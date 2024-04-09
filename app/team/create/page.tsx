@@ -7,6 +7,7 @@ import { UserSession } from '@/types/user';
 import axios from 'axios';
 import { Team } from '@/types/team';
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 export default function CreateTeam() {
 
@@ -42,6 +43,7 @@ export default function CreateTeam() {
         try {
             const response = await axios.post('/api/team', { teamName, description });
             setTeamCode(response.data.code)
+            toast.success(response.data.message)
             console.log(response)
         } catch (error) {
             console.log(error)
