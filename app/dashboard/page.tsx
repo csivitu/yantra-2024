@@ -163,8 +163,15 @@ export default function Dashboard() {
                     </label>
                     <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
                         Track:
-                        <input type="text" name="track" value={ideaData.track} onChange={handleIdeaDataChange} required className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
-                        />
+                        {/* <input type="text" name="track" value={ideaData.track} onChange={handleIdeaDataChange} required className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
+                        /> */}
+                        <select name="" id="" className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl">
+                            <option value="Manas">Manas</option>
+                            <option value="Manas">Manas</option>
+                            <option value="Manas">Manas</option>
+                            <option value="Manas">Manas</option>
+
+                        </select>
                     </label>
                     <button type="submit" className="flex flex-row gap-4 justify-center items-center font-ptMono px-6 py-2 w-full font-light  text-xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out">Submit</button>
                 </form>
