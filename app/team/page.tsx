@@ -44,7 +44,7 @@ export default function TeamPage() {
       }
    };
    return (
-      <main className = "bg-black h-screen text-white flex  md:flex-row justify-center items-center">
+      <main className = "bg-black h-screen text-white flex flex-col  md:flex-row justify-center items-center">
          <h1 className = "absolute top-[0%] left-[50%] translate-x-[-50%] font-mono text-6xl">Team</h1>
         
          <section>
@@ -55,20 +55,20 @@ export default function TeamPage() {
                </div>
             ) : (
                <div className = "border-black border-2 w-[50%]  h-[30%]">
-                 <button className = "bg-blue-500 w-fit px-8 flex justify-center py-4  rounded-md mb-4   ">
+                 <div className = "bg-blue-500 w-fit px-8 flex justify-center py-4  rounded-md mb-4   ">
                   <Link href = "/team/create">
                      Create Team
                   </Link>
 
-                 </button>
+                 </div>
 
                   
-                 <button className = "bg-blue-500 px-10 py-4 w-fit flex justify-center rounded-md">
+                 <div className = "bg-blue-500 px-10 py-4 w-fit flex justify-center rounded-md">
                   <Link href = "/team/create">
                      Join Team
                   </Link>
 
-                 </button>
+                 </div>
 
                  
                </div>
