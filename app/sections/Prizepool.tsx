@@ -27,7 +27,7 @@ const PrizePool: React.FC<PrizePoolProps> = () => {
                     <div className="w-full h-[5px] bg-white/40 mt-2"></div>
                   </div>
                   <div className="text-xl text-white font-aeonik mobile:pt-3">
-                    LoremIpsum <br /> LoremIpsum <br /> LoremIpsum
+                    {/* LoremIpsum <br /> LoremIpsum <br /> LoremIpsum */}
                   </div>
                 </div>
               </div>
@@ -42,7 +42,7 @@ const PrizePool: React.FC<PrizePoolProps> = () => {
                     <div className="w-full h-[5px] bg-white/40 mt-2"></div>
                   </div>
                   <div className="text-xl text-white font-aeonik mobile:pt-3">
-                    LoremIpsum <br /> LoremIpsum <br /> LoremIpsum
+                    {/* LoremIpsum <br /> LoremIpsum <br /> LoremIpsum */}
                   </div>
                 </div>
               </div>
@@ -57,7 +57,7 @@ const PrizePool: React.FC<PrizePoolProps> = () => {
                     <div className="w-full h-[5px] bg-white/40 mt-2"></div>
                   </div>
                   <div className="text-xl text-white font-aeonik mobile:pt-3">
-                    LoremIpsum <br /> LoremIpsum <br /> LoremIpsum
+                    {/* LoremIpsum <br /> LoremIpsum <br /> LoremIpsum */}
                   </div>
                 </div>
               </div>
@@ -73,14 +73,14 @@ const PrizePool: React.FC<PrizePoolProps> = () => {
                 </div>
                 <div className="rounded-t-full bg-gradient-to-b border-2 border-white/30 w-full h-full from-green-500 to-green-600 text-center justify-between items-center flex flex-col mobile:px-10 pt-[5rem] pb-[1rem]">
                   <div className="text-4xl text-white ">
-                    BEST IMPLEMENTATION
+                    BEST FRESHERS
                   </div>
                   <div className="text-2xl text-white font-aeonik">
-                    ₹60,000
+                    ₹15,000
                     <div className="w-full h-[5px] bg-white/40 mt-2"></div>
                   </div>
                   <div className="text-xl text-white font-aeonik mobile:pt-3">
-                    LoremIpsum <br /> LoremIpsum <br /> LoremIpsum
+                    {/* LoremIpsum <br /> LoremIpsum <br /> LoremIpsum */}
                   </div>
                 </div>
               </div>
@@ -97,11 +97,11 @@ const PrizePool: React.FC<PrizePoolProps> = () => {
                 <div className="rounded-t-full bg-gradient-to-b border-2 border-white/30 w-full h-full from-green-500 to-green-600 text-center justify-between items-center flex flex-col mobile:px-10 pt-[5rem] pb-[1rem]">
                   <div className="text-4xl text-white ">BEST UI/UX</div>
                   <div className="text-2xl text-white font-aeonik">
-                    ₹80,000
+                    ₹15,000
                     <div className="w-full h-[5px] bg-white/40 mt-2"></div>
                   </div>
                   <div className="text-xl text-white font-aeonik mobile:pt-3">
-                    LoremIpsum <br /> LoremIpsum <br /> LoremIpsum
+                    {/* LoremIpsum <br /> LoremIpsum <br /> LoremIpsum */}
                   </div>
                 </div>
               </div>
@@ -118,11 +118,11 @@ const PrizePool: React.FC<PrizePoolProps> = () => {
                 <div className="rounded-t-full bg-gradient-to-b border-2 border-white/30 w-full h-full from-green-500 to-green-600 text-center justify-between items-center flex flex-col mobile:px-10 pt-[5rem] pb-[1rem]">
                   <div className="text-4xl text-white ">TRACK WINNERS</div>
                   <div className="text-2xl text-white font-aeonik">
-                    ₹1,20,000
+                    ₹35,000
                     <div className="w-full h-[5px] bg-white/40 mt-2"></div>
                   </div>
                   <div className="text-xl text-white font-aeonik mobile:pt-3">
-                    LoremIpsum <br /> LoremIpsum <br /> LoremIpsum
+                    Per Track
                   </div>
                 </div>
               </div>
