@@ -34,7 +34,7 @@ export async function PATCH(request: Request) {
             }
 
         })
-        return NextResponse.json({ message: "Team updated successfully" }, { status: 200 })
+        return NextResponse.json({ message: "Idea submitted successfully" }, { status: 200 })
     } catch (err) {
         //console.log(err);
         return NextResponse.json({ message: "Error" }, { status: 500 })
