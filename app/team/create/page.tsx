@@ -64,7 +64,7 @@ export default function CreateTeam() {
                         <button type="submit" className='bg-[#aeaeae] px-4 py-2 w-fit rounded-md'>Create Team</button>
                     </form>
                     <div className="flex gap-4 mt-4"><p className='text-xl font-medium'>Your Team Code: </p>
-                    {!teamCode && <p className='text-[#60b86b] font-bold text-xl'>{teamCode}</p>}</div>
+                    {teamCode && <p className='text-[#60b86b] font-bold text-xl'>{teamCode}</p>}</div>
                 </div>
 
             </section>
