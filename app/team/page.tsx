@@ -44,7 +44,9 @@ export default function TeamPage() {
       }
    };
    return (
-      <main>
+      <main className = "bg-black h-screen text-white flex  md:flex-row justify-center items-center">
+         <h1 className = "absolute top-[0%] left-[50%] translate-x-[-50%] font-mono text-6xl">Team</h1>
+        
          <section>
             {team ? (
                <div>
@@ -52,17 +54,27 @@ export default function TeamPage() {
                   {team.teamName} {team.teamCode}
                </div>
             ) : (
-               <div>
+               <div className = "border-black border-2 w-[50%]  h-[30%]">
+                 <button className = "bg-blue-500 w-fit px-8 flex justify-center py-4  rounded-md mb-4   ">
                   <Link href = "/team/create">
-                     Create team
+                     Create Team
                   </Link>
+
+                 </button>
+
+                  
+                 <button className = "bg-blue-500 px-10 py-4 w-fit flex justify-center rounded-md">
                   <Link href = "/team/create">
-                     Join team
+                     Join Team
                   </Link>
+
+                 </button>
+
+                 
                </div>
             )}
          </section>
-         <section>
+         <section className = "mr-2">
             {sessionUser && (
                <div>
                   {sessionUser.email}
