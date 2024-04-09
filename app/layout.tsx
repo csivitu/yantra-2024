@@ -19,7 +19,9 @@ export default async function RootLayout({
         return (
                 <html lang="en">
                         <body className={inter.className}>
-                                <ToastContainer/>
+                                <ToastContainer
+                                theme="dark"
+                                />
                                 {children}
                         </body>
                 </html>
