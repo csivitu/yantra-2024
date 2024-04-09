@@ -18,9 +18,9 @@ const AboutHack: React.FC<AboutHackProps> = () => {
         <div className="flex justify-center items-center w-full laptop:w-[25%] h-full border border-[#292929] laptop:mx-10 my-10 mobile:py-10 rounded-[180px]">
           <Image
             alt="SDG"
-            width={200}
-            height={200}
-            src={"/icons/Brands/SDG.svg"}
+            width={300}
+            height={300}
+            src={"/icons/Brands/YantraIcon.svg"}
             className="object-cover"
           />
         </div>
