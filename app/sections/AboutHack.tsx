@@ -30,14 +30,7 @@ const AboutHack: React.FC<AboutHackProps> = () => {
             WHAT IS SDG ?
           </h2>
           <p className=" font-normal mobile:text-sm laptop:text-xl py-4 text-white/70">
-            The United Nations' 17{" "}
-            <span className="underline">
-              Sustainable Development Goals (SDGs)
-            </span>{" "}
-            include economic, social, and environmental topics to prioritize
-            until 2030. Following the Millennium Development Goals primarily
-            aimed at developing countries, the SDGs were introduced in 2016 to
-            both include more broad topics and address all nations.
+          The 17 Sustainable Development Goals (SDGs) established by the United Nations encompass a range of economic, social, and environmental issues to be focused on until 2030. These goals, introduced in 2016, expand upon the earlier Millennium Development Goals, which were primarily targeted at developing countries. The SDGs are designed to address a wider array of topics and apply to all nations.
           </p>
         </div>
       </div>

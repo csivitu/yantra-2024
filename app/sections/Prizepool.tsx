@@ -13,7 +13,6 @@ const PrizePool: React.FC<PrizePoolProps> = () => {
         <div className=" text-white font-ptMono mobile:text-6xl tab:text-8xl laptop:text-[10rem]   rounded-full p-6 px-[3rem] mt-[0]  mb-[2rem]">
           <span className="font-aeonik">₹</span>5,00,000
         </div>
-
         <div className="w-full h-full">
           <div className="block">
             <div className="flex mobile:flex-col mobile:items-center mobile:justify-between mobile: laptop:flex-row  laptop:mx-[3rem] laptop:justify-between gap-3 laptop:items-end laptop:h-[90vh] ">

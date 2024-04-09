@@ -16,7 +16,7 @@ export default function Navbar() {
       </Link>
       <div className=" laptop:w-[53%]  justify-around items-center text-white font-ptMono font-light laptop:flex mobile:hidden">
         <SmoothScroll target="#about" route="/">
-          About us
+          About Us
         </SmoothScroll>
         {/* <Link href={"/#patrons"}>
           <p>Team</p>
