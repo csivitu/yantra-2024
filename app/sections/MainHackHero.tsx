@@ -42,7 +42,7 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
               alt="SDG"
               width={400}
               height={400}
-              src={"/icons/Brands/YLogo.svg"}
+              src={"/icons/Brands/stack.svg"}
               className="mobile:aspect-square mobile:w-[50%] laptop:w-full"
             />
           </div>

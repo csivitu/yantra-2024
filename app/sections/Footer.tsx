@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="laptop:px-[4rem] mobile:px-[1rem] font-ptMono text-opacity-60 flex flex-col gap-[2rem] text-white text-2xl border-[1px] border-[#292929] rounded-[2rem] w-full py-[28px] text-center mobile:w-full">
             <div className="text-[#fff] text-3xl">Contact Us</div>
             <div className="font-aeonik">yantra.sw@vit.ac.in</div>
-            <div className="font-aeonik">9850278492</div>
+            <div className="font-aeonik">8583984787</div>
           </div>
         </div>
       </section>

@@ -92,15 +92,7 @@ const FAQ = () => {
                 !isOpen1 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+             To participate in the central hack, all individuals are welcome to create and submit their profiles via our website prior to the start of the hackathon. Submissions will undergo evaluation, and participants will be notified of their eligibility status. 
             </div>
           </div>
 
