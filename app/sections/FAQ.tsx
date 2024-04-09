@@ -53,7 +53,10 @@ const FAQ = () => {
   };
 
   return (
-    <div id="guidelines" className="flex flex-col justify-center items-center gap-[1.5rem] px-[3rem]  w-full  font-aeonik">
+    <div
+      id="guidelines"
+      className="flex flex-col justify-center items-center gap-[1.5rem] px-[3rem]  w-full  font-aeonik"
+    >
       {/* <Image
         src="/backgrounds/Mathematics.svg"
         alt="Your Image"
@@ -92,7 +95,10 @@ const FAQ = () => {
                 !isOpen1 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-             To participate in the central hack, all individuals are welcome to create and submit their profiles via our website prior to the start of the hackathon. Submissions will undergo evaluation, and participants will be notified of their eligibility status. 
+              To participate in the central hack, all individuals are welcome to
+              create and submit their profiles via our website prior to the
+              start of the hackathon. Submissions will undergo evaluation, and
+              participants will be notified of their eligibility status.
             </div>
           </div>
 
@@ -122,15 +128,10 @@ const FAQ = () => {
                 !isOpen2 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+              The Central Hack will unfold across various venues, with each
+              track being assigned a distinct location. Participants will
+              receive notification of their track's venue prior to the
+              hackathon's commencement.
             </div>
           </div>
 
@@ -160,15 +161,8 @@ const FAQ = () => {
                 !isOpen3 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+              Teams must consist of a minimum of three members and a maximum of
+              five individuals.
             </div>
           </div>
 
@@ -198,15 +192,10 @@ const FAQ = () => {
                 !isOpen4 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+              The hackathon will span a duration of 48 hours, during which
+              participants will undergo three review sessions. Following these
+              reviews, there will be a final pitching round where teams will
+              present their projects.
             </div>
           </div>
 
@@ -236,138 +225,21 @@ const FAQ = () => {
                 !isOpen5 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+              The hackathon will feature six distinct tracks, each aligned with
+              the Sustainable Development Goals (SDGs), encompassing five
+              problem statements per track. Evaluation of projects within these
+              tracks will be based on criteria including novelty, idea
+              originality, implementation quality, and future plans.
+              Participants will submit their projects directly through the event
+              website.
             </div>
           </div>
-
           {/* Question 6 */}
           <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
             <div className="flex flex-row w-full justify-between">
               <div className="flex text-white text-large laptop:text-3xl gap-4 ">
                 <div className="flex rounded-[30px] border border-white px-2 items-center">
                   06
-                </div>
-                <div className="">Originality</div>
-              </div>
-              <button onClick={() => toggleQuestion(6)}>
-                <Image
-                  src="/icons/plus.svg"
-                  alt="Icon"
-                  width={30}
-                  height={30}
-                  className={`${
-                    isOpen6 ? "rotate-45" : "rotate-0"
-                  } transition-all ease-in-out duration-300`}
-                />
-              </button>
-            </div>
-            <div
-              className={`${
-                !isOpen6 ? "hidden" : "block"
-              } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
-            >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
-            </div>
-          </div>
-
-          {/* Question 7 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
-            <div className="flex flex-row w-full justify-between">
-              <div className="flex text-white text-large laptop:text-3xl gap-4 ">
-                <div className="flex rounded-[30px] border border-white px-2 items-center">
-                  07
-                </div>
-                <div className="">Development</div>
-              </div>
-              <button onClick={() => toggleQuestion(7)}>
-                <Image
-                  src="/icons/plus.svg"
-                  alt="Icon"
-                  width={30}
-                  height={30}
-                  className={`${
-                    isOpen7 ? "rotate-45" : "rotate-0"
-                  } transition-all ease-in-out duration-300`}
-                />
-              </button>
-            </div>
-            <div
-              className={`${
-                !isOpen7 ? "hidden" : "block"
-              } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
-            >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
-            </div>
-          </div>
-
-          {/* Question 8 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
-            <div className="flex flex-row w-full justify-between">
-              <div className="flex text-white text-large laptop:text-3xl gap-4 ">
-                <div className="flex rounded-[30px] border border-white px-2 items-center">
-                  08
-                </div>
-                <div className="">Intellectual Property</div>
-              </div>
-              <button onClick={() => toggleQuestion(8)}>
-                <Image
-                  src="/icons/plus.svg"
-                  alt="Icon"
-                  width={30}
-                  height={30}
-                  className={`${
-                    isOpen8 ? "rotate-45" : "rotate-0"
-                  } transition-all ease-in-out duration-300`}
-                />
-              </button>
-            </div>
-            <div
-              className={`${
-                !isOpen8 ? "hidden" : "block"
-              } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
-            >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
-            </div>
-          </div>
-
-          {/* Question 9 */}
-          <div className="border border-white rounded-lg p-6 transition-all duration-300 ease-in-out">
-            <div className="flex flex-row w-full justify-between">
-              <div className="flex text-white text-large laptop:text-3xl gap-4 ">
-                <div className="flex rounded-[30px] border border-white px-2 items-center">
-                  09
                 </div>
                 <div className="">Fair Play</div>
               </div>
@@ -388,15 +260,7 @@ const FAQ = () => {
                 !isOpen9 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+              The ultimate decision will rest with both the student welfare committee and the organizers. We anticipate that all teams will prioritize the originality of their projects and adhere to fair play standards throughout the hackathon
             </div>
           </div>
         </div>
