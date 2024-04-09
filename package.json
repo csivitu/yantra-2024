@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx prisma db push && next start",
+    "delete": "npx prisma db push --force-reset",
     "lint": "next lint",
     "postinstall": "prisma generate",
     "seed-events": "node --loader ts-node/esm parser/events.ts"
