@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
         title: "Yantra 2024",
-        description: "Portal for all things Yantra",
+        description: "Yantra Central Hackathon Website",
 };
 
 export default async function RootLayout({
