@@ -16,6 +16,7 @@ export default function CreateTeam() {
   const [team, setTeam] = useState<Team | null>(null);
   const [teamName, setTeamName] = useState("");
   const [teamCode, setTeamCode] = useState<string | null>(null);
+  const [teamMade, setTeamMade] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchSession = async () => {
@@ -30,13 +31,13 @@ export default function CreateTeam() {
         ) {
           setSessionUser(session.user as UserSession);
           const response = await axios.get("/api/team");
-          console.log(response.data);
           setTeam(response.data as Team);
+          setTeamMade(true)
         } else {
           setSessionUser(null);
         }
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        toast.error(error?.response?.data?.message)
       }
     };
     fetchSession();
@@ -45,16 +46,16 @@ export default function CreateTeam() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      if(teamName === ""){
+      if (teamName === "") {
         toast.error("Please enter a team name");
         return;
       }
       const response = await axios.post("/api/team", { teamName });
       setTeamCode(response.data.code);
       toast.success(response.data.message);
-      console.log(response);
-    } catch (error) {
-      console.log(error);
+      setTeamMade(true)
+    } catch (error: any) {
+      toast.error(error.response.data.message);
     }
   };
   return (
@@ -97,11 +98,18 @@ export default function CreateTeam() {
         </div>
       </section>
       <div className="mx-auto w-full md:w-[40vw]">
-        <Link href="/dashboard" className="">
-          <button className="w-full px-6 py-2 bg-[#2563eb] hover:bg-[#417bf8] rounded-md">
-            &larr; Go to Dashboard
-          </button>
-        </Link>
+        {teamMade ? (
+          <Link href="/dashboard" className="">
+            <button className="w-full px-6 py-2 bg-[#2563eb] hover:bg-[#417bf8] rounded-md">
+              &larr; Go to Dashboard
+            </button>
+          </Link>
+        ) : (
+          <Link href="/profile" className="w-full px-6 py-2 bg-[#2563eb] hover:bg-[#417bf8] rounded-md">
+            Go to profile
+          </Link>
+        )}
+
       </div>
       {/* <section>
                 {sessionUser && (
