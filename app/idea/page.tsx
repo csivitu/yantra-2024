@@ -30,7 +30,7 @@ export default function Idea(){
           ...ideaData,
           [e.target.name]: e.target.value,
         });
-        console.log(ideaData)
+        // console.log(ideaData)
       };
     return <div className="bg-black w-full h-full min-h-screen text-white flex items-center justify-center"><div className="flex flex-col gap-[1rem] items-center border-2 p-6 rounded-lg w-fit">
     <h2 className="w-full text-2xl mt-4 md:text-3xl font-ptMono text-center">
