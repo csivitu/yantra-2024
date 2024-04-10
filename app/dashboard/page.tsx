@@ -7,8 +7,11 @@ import axios from "axios";
 import { Team } from "@/types/team";
 import Link from "next/link";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 // import Image from "next/image";
 export default function Dashboard() {
+
+  const router = useRouter()
   const [sessionUser, setSessionUser] = useState<UserSession | null>(null);
   const [team, setTeam] = useState<Team | null>(null);
   const [profileSet, setProfileSet] = useState<boolean>(false);
@@ -60,151 +63,166 @@ export default function Dashboard() {
     });
   };
 
+  const handleTeamDelete = async () => {
+    try{
+      const response = await axios.delete("/api/team");
+      toast.success(response.data.message);
+      router.push("/")
+    }catch(error: any){
+      toast.error(error.response.data.message);
+      console.error(error);
+    }
+  }
+
   const handleFormSubmit = async (e: any) => {
     e.preventDefault();
     try {
       const response = await axios.patch("/api/team/idea", ideaData);
       toast.success(response.data.message);
-    } catch (error) {
+    } catch (error: any) {
+      toast.error(error.response.data.message)
       console.error(error);
     }
   };
 
+  
   return (
-    <main className="bg-black min-h-screen w-full text-white flex flex-col justify-center items-center py-4 gap-[3rem]">
-      {/* {sessionUser && <h1>Welcome {sessionUser.name}</h1>} */}
-      <h2 className="w-full text-6xl font-ptMono text-center mt-8 md:mt-0">
-        Dashboard
-      </h2>
-      {/* {team && <h3>{team.teamName} and {team.teamCode}</h3>} */}
-      <div className="w-full flex flex-col md:flex-row">
-        <section className="flex flex-col justify-start items-center w-[80%] mx-auto border-2 border-white rounded-lg p-4 scale-90">
-          <h2 className="w-full text-3xl font-ptMono">Profile</h2>
-          {/* {user && <p>{user.linkedinProfile}</p>} */}
-          {/* {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>} */}
-
-          {user && (
-            <div className="flex flex-col gap-2 md:gap-[1rem] justify-center items-start w-full">
-              <p className="font-bold text-sm md:text-xl">
-                Name: <span className="font-normal">{user.name}</span>
-              </p>
-              <p className="font-bold text-sm md:text-xl">
-                Email: <span className="font-normal">{user.email}</span>
-              </p>
-              <p className="font-bold text-sm md:text-xl w-[75%]">
-                About me: <span className="font-normal">{user.bio}</span>
-              </p>
-              {/* user Github && */}
-              <div className="w-full flex flex-col gap-[1rem]">
-                <p className="font-bold text-sm md:text-xl     w-[75%]">
-                  Github:{" "}
-                  <span className="font-normal">{user.githubProfile}</span>
-                </p>
-              </div>
-            </div>
-          )}
-          {/* <section className = "flex flex-col ">
-                {team && (
-                    <div>
-                        {team.members.map((member, index) => () => {}
-                    </div>
-                )
-
-                }
-            </section> */}
-        </section>
-        <section className="flex flex-col justify-start items-center w-[80%] mx-auto border-2 border-white rounded-lg p-4 scale-90">
-          <h2 className="w-full text-3xl font-ptMono">Team Details</h2>
-          {/* {user && <p>{user.linkedinProfile}</p>} */}
-          {/* {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>} */}
-
-          {team && (
-            <div className="flex flex-col gap-2 md:gap-[1rem] justify-center items-start w-full">
-              <p className="font-bold text-lg md:text-xl">
-                Team Name: <span className="font-normal">{team.teamName}</span>
-              </p>
-              <p className="font-bold text-lg md:text-xl">
-                Team Code: <span className="font-normal">{team.teamCode}</span>
-              </p>
-
-              <div className="w-full flex flex-col gap-1">
-                <p className="font-bold text-xl w-[75%]">
-                  Github:{" "}
-                  <span className="font-normal">
-                    {team.users.map((user) => (
-                      <p>{user.name}</p>
-                    ))}
-                  </span>
-                </p>
-              </div>
-            </div>
-          )}
-          {/* <section className = "flex flex-col ">
-                {team && (
-                    <div>
-                        {team.members.map((member, index) => () => {}
-                    </div>
-                )
-
-                }
-            </section> */}
-        </section>
+    <main className="font-ptMono bg-black min-h-screen h-fit w-full text-white p-8">
+      <div className = "flex flex-col md:flex-row justify-between items-center">
+      <h1 className="text-4xl font-bold">Dashboard</h1>
+      <button className="flex flex-row gap-4 justify-center items-center font-ptMono px-6 py-2 w-fit font-light  text-xl rounded-lg text-white bg-red-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-red-700 transition-all duration-200 ease-in-out"
+      onClick = {handleTeamDelete} >Leave team</button>  
       </div>
-      <div className="flex flex-col gap-[1rem] justify-center items-center">
-        <h2 className="w-full text-2xl mt-4 md:text-3xl font-ptMono text-center">
-          Idea Submission
-        </h2>
-        <form
-          onSubmit={handleFormSubmit}
-          className="w-full flex flex-col md:flex-row justify-center items-end gap-[2rem] "
-        >
-          <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
-            Idea Description:
-            <input
-              type="text"
-              name="ideaDescription"
-              value={ideaData.ideaDescription}
-              onChange={handleIdeaDataChange}
-              required
-              className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
-            />
-          </label>
-          <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
-            Idea Link:
-            <input
-              type="text"
-              name="ideaLink"
-              value={ideaData.ideaLink}
-              onChange={handleIdeaDataChange}
-              required
-              className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
-            />
-          </label>
-          <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
-            Track:
-            {/* <input type="text" name="track" value={ideaData.track} onChange={handleIdeaDataChange} required className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
-                        /> */}
-            <select
-              name=""
-              id=""
-              className="border-[2px] border-[#fafafa] bg-black text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
-            >
-              <option value="Manas">QUALITY EDUCATION</option>
-              <option value="Manas">REDUCED INEQUALITIES</option>
-              <option value="Manas">PARTNERSHIP FOR GOALS </option>
-              <option value="Manas">GENDER EQUALITY</option>
-              <option value="Manas">SUSTAINABLE CITIES COMMUNITIES</option>
-              <option value="Manas">DECENT WORK AND ECONOMIC GROWTH</option>
-            </select>
-          </label>
-          <button
-            type="submit"
-            className="flex flex-row gap-4 justify-center items-center font-ptMono px-6 py-2 w-full font-light  text-xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out"
+      <hr />
+      <section className="flex flex-col md:flex-row py-6 md:h-[90vh] gap-2">
+        <div className="flex flex-col gap-[1rem] items-center border-2 p-6 rounded-lg">
+          <h2 className="w-full text-2xl mt-4 md:text-3xl font-ptMono text-center">
+            Idea Submission
+          </h2>
+          <form
+            onSubmit={handleFormSubmit}
+            className="w-full flex flex-col justify-center items-center gap-[2rem] "
           >
-            Submit
-          </button>
-        </form>
-      </div>
+            <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
+              Idea Description:
+              <input
+                type="text"
+                name="ideaDescription"
+                value={ideaData.ideaDescription}
+                onChange={handleIdeaDataChange}
+                required
+                className="border-[2px] border-[#aeaeae70] bg-[#aeaeae50] text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
+              />
+            </label>
+            <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
+              Idea Link:
+              <input
+                type="text"
+                name="ideaLink"
+                value={ideaData.ideaLink}
+                onChange={handleIdeaDataChange}
+                required
+                className="border-[2px] border-[#aeaeae70] bg-[#aeaeae50] text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
+              />
+            </label>
+            <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
+              Track:
+              <input
+                type="text"
+                name="track"
+                value={ideaData.track}
+                onChange={handleIdeaDataChange}
+                required
+                className="border-[2px] border-[#aeaeae70] bg-[#aeaeae50] text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
+              />
+            </label>
+            <button
+              type="submit"
+              className="flex flex-row gap-4 justify-center items-center font-ptMono px-6 py-2 w-full font-light  text-xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div className="w-full flex flex-col gap-2">
+          <section className="flex flex-col justify-center items-center w-full mx-auto border-2 border-white rounded-lg p-4  order-1">
+            <h2 className="w-full text-3xl font-ptMono mb-6">Profile</h2>
+            {/* {user && <p>{user.linkedinProfile}</p>} */}
+            {/* {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>} */}
+
+            {user && (
+              <div className="flex flex-col gap-2 md:gap-[1rem] justify-center items-start w-full">
+                <p className="font-bold text-sm md:text-xl">
+                  Name: <span className="font-normal">{user.name}</span>
+                </p>
+                <p className="font-bold text-sm md:text-xl">
+                  Email: <span className="font-normal">{user.email}</span>
+                </p>
+                <p className="font-bold text-sm md:text-xl w-[75%]">
+                  About me: <span className="font-normal">{user.bio}</span>
+                </p>
+                {/* user Github && */}
+                <div className="w-full flex flex-col gap-[1rem]">
+                  <p className="font-bold text-sm md:text-xl     w-[75%]">
+                    Github:{" "}
+                    <span className="font-normal">{user.githubProfile}</span>
+                  </p>
+                </div>
+              </div>
+            )}
+            {/* <section className = "flex flex-col ">
+                {team && (
+                    <div>
+                        {team.members.map((member, index) => () => {}
+                    </div>
+                )
+
+                }
+            </section> */}
+          </section>
+          <section className="flex flex-col justify-center items-center w-full mx-auto border-2 border-white rounded-lg p-4">
+            <h2 className="w-full text-3xl font-ptMono mb-6">Team Details</h2>
+            {/* {user && <p>{user.linkedinProfile}</p>} */}
+            {/* {profileSet.valueOf() && <Link href="/test/profile">Kindly complete your profile, it's important for selection</Link>} */}
+
+            {team && (
+              <div className="flex flex-col gap-2 md:gap-[1rem] justify-center items-start w-full">
+                <p className="font-bold text-lg md:text-xl">
+                  Team Name:{" "}
+                  <span className="font-normal">{team.teamName}</span>
+                </p>
+                <p className="font-bold text-lg md:text-xl">
+                  Team Code:{" "}
+                  <span className="font-normal">{team.teamCode}</span>
+                </p>
+
+                <div className="w-full flex flex-col gap-1">
+                  <p className="font-bold text-xl w-[75%]">
+                    Github:{" "}
+                    <span className="font-normal">
+                      {team.users.map((user) => (
+                        <p>{user.name}</p>
+                      ))}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            )}
+            {/* <section className = "flex flex-col ">
+                {team && (
+                    <div>
+                        {team.members.map((member, index) => () => {}
+                    </div>
+                )
+
+                }
+            </section> */}
+          </section>
+        </div>
+      </section>
+      {/* {sessionUser && <h1>Welcome {sessionUser.name}</h1>} */}
+
+      {/* {team && <h3>{team.teamName} and {team.teamCode}</h3>} */}
     </main>
   );
 }
