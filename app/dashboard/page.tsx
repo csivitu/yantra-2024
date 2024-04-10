@@ -97,10 +97,12 @@ export default function Dashboard() {
         <h1 className="text-4xl font-bold">Dashboard</h1>
         <button className="flex flex-row gap-4 justify-center items-center font-ptMono px-6 py-2 w-fit font-light  text-xl rounded-lg text-white bg-red-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-red-700 transition-all duration-200 ease-in-out"
           onClick={handleTeamDelete} >Leave team</button>
+          <Link className="flex flex-row gap-4 justify-center items-center font-ptMono px-6 py-2 w-fit font-light  text-xl rounded-lg text-white bg-blue-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-200 ease-in-out"
+          href="/idea" >Submit idea</Link>
       </div>
       <hr />
       <section className="flex flex-col md:flex-row py-6 md:h-[90vh] gap-2">
-        <div className="flex flex-col gap-[1rem] items-center border-2 p-6 rounded-lg">
+        {/* <div className="flex flex-col gap-[1rem] items-center border-2 p-6 rounded-lg">
           <h2 className="w-full text-2xl mt-4 md:text-3xl font-ptMono text-center">
             Idea Submission
           </h2>
@@ -154,7 +156,7 @@ export default function Dashboard() {
               Submit
             </button>
           </form>
-        </div>
+        </div> */}
         <div className="w-full flex flex-col gap-2">
           <section className="flex flex-col justify-center items-center w-full mx-auto border-2 border-white rounded-lg p-4  order-1">
             <h2 className="w-full text-3xl font-ptMono mb-6">Profile</h2>
