@@ -24,7 +24,6 @@ export default function Dashboard() {
 
   useEffect(() => {
     const fetchSession = async () => {
-      try {
         const session = await getSession();
         if (
           session &&
@@ -43,17 +42,20 @@ export default function Dashboard() {
           ) {
             setProfileSet(true);
           }
+          try{
           const team = await axios.get("/api/team");
           setTeam(team.data);
+          }catch(error: any){
+            toast.error("You are not part of any team")
+            router.push("/team")
+          }
         } else {
           setSessionUser(null);
         }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchSession();
-  }, []);
+
+      };
+      fetchSession();
+    }, []);
 
   const handleIdeaDataChange = (e: any) => {
     e.preventDefault();
@@ -64,11 +66,11 @@ export default function Dashboard() {
   };
 
   const handleTeamDelete = async () => {
-    try{
+    try {
       const response = await axios.delete("/api/team");
       toast.success(response.data.message);
       router.push("/")
-    }catch(error: any){
+    } catch (error: any) {
       toast.error(error.response.data.message);
       console.error(error);
     }
@@ -85,13 +87,13 @@ export default function Dashboard() {
     }
   };
 
-  
+
   return (
     <main className="font-ptMono bg-black min-h-screen h-fit w-full text-white p-8">
-      <div className = "flex flex-col md:flex-row justify-between items-center">
-      <h1 className="text-4xl font-bold">Dashboard</h1>
-      <button className="flex flex-row gap-4 justify-center items-center font-ptMono px-6 py-2 w-fit font-light  text-xl rounded-lg text-white bg-red-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-red-700 transition-all duration-200 ease-in-out"
-      onClick = {handleTeamDelete} >Leave team</button>  
+      <div className="flex flex-col md:flex-row justify-between items-center">
+        <h1 className="text-4xl font-bold">Dashboard</h1>
+        <button className="flex flex-row gap-4 justify-center items-center font-ptMono px-6 py-2 w-fit font-light  text-xl rounded-lg text-white bg-red-500 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-red-700 transition-all duration-200 ease-in-out"
+          onClick={handleTeamDelete} >Leave team</button>
       </div>
       <hr />
       <section className="flex flex-col md:flex-row py-6 md:h-[90vh] gap-2">
@@ -127,14 +129,20 @@ export default function Dashboard() {
             </label>
             <label className="flex flex-col gap-2gap-[1rem] justify-center items-center ">
               Track:
-              <input
-                type="text"
+              <select
                 name="track"
                 value={ideaData.track}
                 onChange={handleIdeaDataChange}
                 required
                 className="border-[2px] border-[#aeaeae70] bg-[#aeaeae50] text-gray-400 font-ptMono px-[1rem] rounded-lg py-1 md:py-[0.5rem] text-xl"
-              />
+              >
+                <option value="QUALITY EDUCATION">QUALITY EDUCATION</option>
+                <option value="REDUCED INEQUALITIES">REDUCED INEQUALITIES</option>
+                <option value="PARTNERSHIP FOR GOALS">PARTNERSHIP FOR GOALS</option>
+                <option value="GENDER EQUALITY">GENDER EQUALITY</option>
+                <option value="SUSTAINABLE CITIES COMMUNITIES">SUSTAINABLE CITIES COMMUNITIES</option>
+                <option value="DECENT WORK AND ECONOMIC GROWTH">DECENT WORK AND ECONOMIC GROWTH</option>
+              </select>
             </label>
             <button
               type="submit"

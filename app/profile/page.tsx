@@ -48,6 +48,10 @@ export default function ProfilePage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      if(githubProfile == "" || linkedinProfile == "" || projects == "" || bio == "" || phoneNum == "" || otherProfile == ""){
+        toast.error("Please fill all the fields")
+        return;
+      }
       const response = await axios.put("/api/user", {
         githubProfile,
         linkedinProfile,
@@ -84,6 +88,14 @@ export default function ProfilePage() {
           onSubmit={handleSubmit}
           className="mt-4 flex flex-col gap-4 items-center"
         >
+           <label className="flex w-full md:w-[35vw] flex-col md:flex-row">
+            <input
+              value={phoneNum}
+              onChange={(e) => setPhoneNum(e.target.value)}
+              className="rounded-lg p-1  w-full px-6 py-2 bg-[#aeaeae50] text-white"
+              placeholder="Phone No."
+            />
+          </label>
           <label className="flex w-full md:w-[35vw] flex-col md:flex-row">
             <input
               type="text"
@@ -128,14 +140,7 @@ export default function ProfilePage() {
               placeholder="Bio"
             />
           </label>
-          <label className="flex w-full md:w-[35vw] flex-col md:flex-row">
-            <textarea
-              value={phoneNum}
-              onChange={(e) => setPhoneNum(e.target.value)}
-              className="rounded-lg p-1  w-full px-6 py-2 bg-[#aeaeae50] text-white"
-              placeholder="Phone No."
-            />
-          </label>
+         
           <button
             type="submit"
             className="bg-[#42c342] hover:bg-[#4edb4e] px-4 py-2 rounded-lg mx-auto w-full text-white font-medium"
