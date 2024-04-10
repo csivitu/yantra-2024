@@ -188,15 +188,7 @@ const FAQ = () => {
                 !isOpen4 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+              The hackathon will span a duration of 48 hours, during which participants will undergo three review sessions. Following these reviews, there will be a final pitching round where teams will present their projects.
             </div>
           </div>
 
@@ -226,15 +218,7 @@ const FAQ = () => {
                 !isOpen5 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+              The hackathon will feature six distinct tracks, each aligned with the Sustainable Development Goals (SDGs), encompassing five problem statements per track. Evaluation of projects within these tracks will be based on criteria including novelty, idea originality, implementation quality, and future plans. Participants will submit their projects directly through the event website.
             </div>
           </div>
           {/* Question 6 */}
@@ -263,15 +247,7 @@ const FAQ = () => {
                 !isOpen9 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              During the Yantra week multiple clubs and chapters had conducted
-              hackathons. The SDG Hackathon is exclusive only to the winning
-              teams from these hackathons. Each Club and Chapter can send in 5
-              member representatives as well to take part in the SDG Hackathon.
-              We also entertain lateral entries for which you will be
-              shortlisted to participate on the basis of your project
-              submission. All the participants must be undergraduate students of
-              Vellore Institute of Technology, Vellore and must be in campus to
-              take part.
+              The ultimate decision will rest with both the student welfare committee and the organizers. We anticipate that all teams will prioritize the originality of their projects and adhere to fair play standards throughout the hackathon
             </div>
           </div>
         </div>
