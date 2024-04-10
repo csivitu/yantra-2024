@@ -48,7 +48,7 @@ export default function ProfilePage() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      if(githubProfile == "" || linkedinProfile == "" || projects == "" || bio == "" || phoneNum == "" || otherProfile == ""){
+      if (githubProfile == "" || linkedinProfile == "" || projects == "" || bio == "" || phoneNum == "" || otherProfile == "") {
         toast.error("Please fill all the fields")
         return;
       }
@@ -60,7 +60,12 @@ export default function ProfilePage() {
         otherProfile,
       });
       toast.success(response.data.message);
-      router.push("/team");
+      if (user.teamId == null) {
+        router.push("/team");
+      }
+      else {
+        router.push("/dashboard");
+      }
     } catch (e) {
       console.log(e);
     }
@@ -88,7 +93,7 @@ export default function ProfilePage() {
           onSubmit={handleSubmit}
           className="mt-4 flex flex-col gap-4 items-center"
         >
-           <label className="flex w-full md:w-[35vw] flex-col md:flex-row">
+          <label className="flex w-full md:w-[35vw] flex-col md:flex-row">
             <input
               value={phoneNum}
               onChange={(e) => setPhoneNum(e.target.value)}
@@ -140,7 +145,7 @@ export default function ProfilePage() {
               placeholder="Bio"
             />
           </label>
-         
+
           <button
             type="submit"
             className="bg-[#42c342] hover:bg-[#4edb4e] px-4 py-2 rounded-lg mx-auto w-full text-white font-medium"

@@ -24,38 +24,41 @@ export default function Dashboard() {
 
   useEffect(() => {
     const fetchSession = async () => {
-        const session = await getSession();
+      const session = await getSession();
+      if (
+        session &&
+        session.user &&
+        session.user.name &&
+        session.user.email &&
+        session.user.image
+      ) {
+        setSessionUser(session.user as UserSession);
+        const user = await axios.get("/api/user");
+        setUser(user.data.user);
         if (
-          session &&
-          session.user &&
-          session.user.name &&
-          session.user.email &&
-          session.user.image
+          user.data.user.githubProfile &&
+          user.data.user.projects &&
+          user.data.user.bio
         ) {
-          setSessionUser(session.user as UserSession);
-          const user = await axios.get("/api/user");
-          setUser(user.data.user);
-          if (
-            user.data.user.githubProfile &&
-            user.data.user.projects &&
-            user.data.user.bio
-          ) {
-            setProfileSet(true);
-          }
-          try{
+          setProfileSet(true);
+        }else{
+          toast.error("Kindly complete your profile, it's important for selection")
+          router.push("/profile")
+        }
+        try {
           const team = await axios.get("/api/team");
           setTeam(team.data);
-          }catch(error: any){
-            toast.error("You are not part of any team")
-            router.push("/team")
-          }
-        } else {
-          setSessionUser(null);
+        } catch (error: any) {
+          toast.error("You are not part of any team")
+          router.push("/team")
         }
+      } else {
+        setSessionUser(null);
+      }
 
-      };
-      fetchSession();
-    }, []);
+    };
+    fetchSession();
+  }, []);
 
   const handleIdeaDataChange = (e: any) => {
     e.preventDefault();
