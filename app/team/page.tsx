@@ -53,7 +53,7 @@ export default function TeamPage() {
       <h1 className="text-4xl font-bold">Team</h1>
       <hr />
       <section className="w-full flex ">
-        {team ? (
+        {team?.id ? (
           <div className="w-full flex flex-col gap-2 items-center">
             <div className="w-fit p-8 border-2 border-white  rounded-lg mx-auto bg-[#aeaeae50] text-2xl mt-8">
               <p>Team: {team.teamName}</p>
