@@ -45,6 +45,10 @@ export default function CreateTeam() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
+      if(teamName === ""){
+        toast.error("Please enter a team name");
+        return;
+      }
       const response = await axios.post("/api/team", { teamName });
       setTeamCode(response.data.code);
       toast.success(response.data.message);
