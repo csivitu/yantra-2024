@@ -52,7 +52,7 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
                 onClick={() => signIn("google", { callbackUrl })}
                 className="flex flex-row gap-4 justify-center items-center font-ptMono laptop:px-3 mobile:px-2 mobile:py-1 laptop:py-2 font-light m-3 text-xl rounded-lg text-white bg-blue-400 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-110 ease-in-out"
               >
-                Register now
+                Login (Registrations are closed)
               </button>
             ) : (
               <Link

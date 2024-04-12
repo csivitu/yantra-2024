@@ -42,15 +42,14 @@ export default function Dashboard() {
         ) {
           setProfileSet(true);
         }else{
-          toast.error("Kindly complete your profile, it's important for selection")
-          router.push("/profile")
+          
         }
         try {
           const team = await axios.get("/api/team");
           setTeam(team.data);
         } catch (error: any) {
-          toast.error("You are not part of any team")
-          router.push("/team")
+          // toast.error("You are not part of any team")
+          // router.push("/team")
         }
       } else {
         setSessionUser(null);

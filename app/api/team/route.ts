@@ -6,49 +6,51 @@ import prisma from "@/lib/prisma";
 
 //create team
 export async function POST(request: Request) {
-    try {
-        const inviteCode = generateInviteCode();
-        const { teamName } = await request.json();
-        const session = await getServerSession(authOptions);
+    return NextResponse.json({ message: "Registrations are closed" }, { status: 400 });
+    // try {
+    //     const inviteCode = generateInviteCode();
+    //     const { teamName } = await request.json();
+    //     const session = await getServerSession(authOptions);
 
-        if (!session || !session.user || !session.user.name || !session.user.email) {
-            return NextResponse.json({ message: "Invalid session or user" }, { status: 401 });
-        }
+    //     if (!session || !session.user || !session.user.name || !session.user.email) {
+    //         return NextResponse.json({ message: "Invalid session or user" }, { status: 401 });
+    //     }
 
-        const user = await prisma.user.findFirst({
-            where: { email: session.user.email },
-        });
+    //     const user = await prisma.user.findFirst({
+    //         where: { email: session.user.email },
+    //     });
 
-        if (!user) {
-            return NextResponse.json({ message: "User not found" }, { status: 404 });
-        }
+    //     if (!user) {
+    //         return NextResponse.json({ message: "User not found" }, { status: 404 });
+    //     }
 
-        if (user.teamId) {
-            return NextResponse.json({ message: "User already part of a team" }, { status: 400 });
-        }
+    //     if (user.teamId) {
+    //         return NextResponse.json({ message: "User already part of a team" }, { status: 400 });
+    //     }
 
-        const team = await prisma.team.create({
-            data: {
-                teamName: teamName,
-                teamCode: inviteCode,
-                createdBy: { connect: { email: session.user.email } },
-            },
-        });
-        await prisma.user.update({
-            where: { email: session.user.email },
-            data: {
-                teamId: team.id,
-            },
-        });
+    //     const team = await prisma.team.create({
+    //         data: {
+    //             teamName: teamName,
+    //             teamCode: inviteCode,
+    //             createdBy: { connect: { email: session.user.email } },
+    //         },
+    //     });
+    //     await prisma.user.update({
+    //         where: { email: session.user.email },
+    //         data: {
+    //             teamId: team.id,
+    //         },
+    //     });
 
-        return NextResponse.json({ message: "Team created successfully", code: inviteCode }, { status: 200 });
-    } catch (error) {
-        console.error(error);
-        return NextResponse.json({ message: "An error occurred" }, { status: 500 });
-    }
+    //     return NextResponse.json({ message: "Team created successfully", code: inviteCode }, { status: 200 });
+    // } catch (error) {
+    //     console.error(error);
+    //     return NextResponse.json({ message: "An error occurred" }, { status: 500 });
+    // }
 }
 
 export async function GET(request: Request) {
+
     try {
         const session = await getServerSession(authOptions);
         if (!session || !session.user || !session.user.name || !session.user.email) {
@@ -76,6 +78,7 @@ export async function GET(request: Request) {
 
 //join team
 export async function PUT(request: Request) {
+
     try {
         const { teamCode } = await request.json();
         const session = await getServerSession(authOptions);
