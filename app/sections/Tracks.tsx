@@ -117,8 +117,8 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
             </div>
 
             <div className=" text-wrap mobile:text-3xl tab:text-4xl laptop:text-4xl">
-              DECENT WORK AND  <br />
-              ECONOMIC GROWTH
+              GOOD WEALTH <br />
+              AND ECONOMIC GROWTH
             </div>
           </div>
         </div>
