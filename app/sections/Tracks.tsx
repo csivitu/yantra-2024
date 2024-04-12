@@ -39,7 +39,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
             </div>
 
             <div className=" text-wrap mobile:text-3xl tab:text-3xl laptop:text-4xl">
-            QUALITY EDUCATION 
+            REDUCED INEQUALITY
             </div>
           </div>
         </div>
@@ -64,8 +64,8 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
             </div>
 
             <div className=" text-wrap mobile:text-3xl tab:text-4xl laptop:text-4xl">
-              REDUCED, <br />
-              INEQUALITIES
+              QUALITY, <br />
+              EDUCATION
               <br />
             </div>
           </div>
@@ -91,8 +91,8 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
             </div>
 
             <div className=" text-wrap mobile:text-3xl tab:text-4xl laptop:text-4xl">
-              PARTNERSHIP FOR <br />
-              GOALS <br />
+              SUSTAINTABLE CITY, <br />
+              COMMUNITIES <br />
             </div>
           </div>
         </div>
@@ -117,8 +117,8 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
             </div>
 
             <div className=" text-wrap mobile:text-3xl tab:text-4xl laptop:text-4xl">
-              GENDER <br />
-              EQUALITY
+              DECENT WORK AND  <br />
+              ECONOMIC GROWTH
             </div>
           </div>
         </div>
@@ -143,7 +143,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
             </div>
 
             <div className=" text-wrap mobile:text-3xl tab:text-4xl laptop:text-4xl">
-            SUSTAINABLE CITIES <br /> COMMUNITIES
+            GOOD HEALTH AND <br /> WELL BEING
             </div>
           </div>
         </div>
@@ -168,7 +168,7 @@ const Tracks: React.FC<TrackProps> = ({ gridOption }) => {
             </div>
 
             <div className=" text-wrap mobile:text-3xl tab:text-4xl laptop:text-4xl uppercase">
-            Decent work and economic growth
+            PARTNERSHIP FOR GOALS
             </div>
           </div>
         </div>
