@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getSession, signIn } from "next-auth/react"; // Import the signIn function from NextAuth for authentication.
 import Animation from "./AnimationMainHAckHero";
+import { toast } from "react-toastify";
 type MainHackHeroProps = {};
 
 const MainHackHero: React.FC<MainHackHeroProps> = () => {
@@ -20,6 +21,10 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
     };
     fetchData();
   }, []);
+
+  const handleReg = () => {
+    toast.error("Registrations are closed")
+  }
 
   const callbackUrl = "/profile";
 
@@ -49,10 +54,10 @@ const MainHackHero: React.FC<MainHackHeroProps> = () => {
           <div>
             {!signedIn ? (
               <button
-                onClick={() => signIn("google", { callbackUrl })}
-                className="flex flex-row gap-4 justify-center items-center font-ptMono laptop:px-3 mobile:px-2 mobile:py-1 laptop:py-2 font-light m-3 text-xl rounded-lg text-white bg-blue-400 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-blue-700 transition-all duration-110 ease-in-out"
-              >
-                Login (Registrations are closed)
+                onClick={() => handleReg()}
+                className="flex flex-row gap-4 justify-center items-center font-ptMono laptop:px-3 mobile:px-2 mobile:py-1 laptop:py-2 font-light m-3 text-xl rounded-lg text-white bg-slate-400 border-b-4 border-transparent hover:scale-110 hover:border-b-4  hover:border-slate-700 transition-all duration-110 ease-in-out"
+              disabled >
+                Registrations are closed
               </button>
             ) : (
               <Link
