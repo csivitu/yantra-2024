@@ -1,5 +1,5 @@
 import React from "react";
-import Timeline from "@/app/sections/Timeline";
+import TimelineComponent from "@/app/components/timeline";
 import Navbar from "@/app/components/Navbar";
 import Tracks from "@/app/sections/Tracks";
 import AboutHack from "@/app/sections/AboutHack";
@@ -16,6 +16,7 @@ const page = () => {
       {/* <Timeline /> */}
       {/* Try this with gridOption = 3 and gridOption = 4. 3 looks better imo */}
       <Tracks gridOption={4} />
+      <TimelineComponent />
       <PrizePool />
       <FAQ />
       <Footer />
