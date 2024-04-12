@@ -20,6 +20,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     const fetchData = async () => {
+      toast.warn("Registrations are closed now")
       const session = await getSession();
       if (!session || !session.user) {
         router.push("/login");
@@ -47,6 +48,8 @@ export default function ProfilePage() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    toast.error("Registrations are closed")
+    return;
     try {
       if (githubProfile == "" || linkedinProfile == "" || projects == "" || bio == "" || phoneNum == "" || otherProfile == "") {
         toast.error("Please fill all the fields")
