@@ -218,7 +218,7 @@ const FAQ = () => {
                 !isOpen5 ? "hidden" : "block"
               } text-white px-2 py-4 mt-6 text-sm laptop:text-2xl border-t border-white transition-all duration-300 ease-in-out`}
             >
-              The hackathon will feature six distinct tracks, each aligned with the Sustainable Development Goals (SDGs), encompassing five problem statements per track. Evaluation of projects within these tracks will be based on criteria including novelty, idea originality, implementation quality, and future plans. Participants will submit their projects directly through the event website.
+              The hackathon will feature six distinct tracks, each aligned with the Sustainable Development Goals (SDGs). Evaluation of projects within these tracks will be based on criteria including novelty, idea originality, implementation quality, and future plans. Participants will submit their projects directly through the event website.
             </div>
           </div>
           {/* Question 6 */}
