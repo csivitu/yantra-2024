@@ -73,7 +73,7 @@ const PrizePool: React.FC<PrizePoolProps> = () => {
                 </div>
                 <div className="rounded-t-full bg-gradient-to-b border-2 border-white/30 w-full h-full from-green-500 to-green-600 text-center justify-between items-center flex flex-col mobile:px-10 pt-[5rem] pb-[1rem]">
                   <div className="text-4xl text-white ">
-                    BEST FRESHERS
+                    BEST IMPLEMENTATION
                   </div>
                   <div className="text-2xl text-white font-aeonik">
                     ₹15,000
